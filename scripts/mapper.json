@@ -8,4 +8,5 @@
     "zshrc": ".zshrc",
     "xfce4": ".config/xfce4",
     "bashrc": ".bashrc",
+    "xprofile": ".xprofile"
 }
