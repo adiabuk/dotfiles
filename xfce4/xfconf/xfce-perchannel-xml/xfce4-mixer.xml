@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-mixer" version="1.0">
+  <property name="sound-card" type="string" value="Playbacktegrart5639AnalogStereoPulseAudioMixer"/>
+  <property name="sound-cards" type="empty">
+    <property name="PlaybackDummyOutputPulseAudioMixer" type="array">
+      <value type="string" value="Master"/>
+    </property>
+    <property name="Playbacktegrart5639AnalogStereoPulseAudioMixer" type="array">
+      <value type="string" value="Master"/>
+    </property>
+  </property>
+  <property name="window-height" type="int" value="1492"/>
+  <property name="window-width" type="int" value="2560"/>
+</channel>
