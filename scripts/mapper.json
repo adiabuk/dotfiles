@@ -1,0 +1,11 @@
+{
+    "emacs": ".emacs",
+    "emacs.d": ".emacs.d",
+    "keymap": ".Xmodmap",
+    "vim": ".vim",
+    "vimrc": ".vimrc",
+    "oh-my-zsh": ".oh-my-zsh",
+    "zshrc": ".zshrc",
+    "xfce4": ".config/xfce4",
+    "bashrc": ".bashrc",
+}
