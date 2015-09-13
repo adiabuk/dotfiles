@@ -9,6 +9,8 @@ fi
 alias vi='vim'
 if [[ $platform == 'mac' ]]; then
   alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw';
+else
+  alias emacs='emacs -nw'
 fi
 
 alias ll='ls -l'
@@ -21,3 +23,5 @@ export HISTFILESIZE=-1
 export HISTSIZE=130000
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -n"
+export TERM=xterm-256color
+ex[prt vi='vim'
