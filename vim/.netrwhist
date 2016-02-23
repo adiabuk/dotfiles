@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/data/users/amro/fbcode-git/tupperware/audit/e2e/if'
 let g:netrw_dirhist_2='/data/users/amro/fbcode-hg/monitoring/watermelon'
 let g:netrw_dirhist_3='/data/users/amro/fbcode-git/fbar/fbartop/UI'
 let g:netrw_dirhist_4='/etc/configerator-client/sv/configerator_proxy'
 let g:netrw_dirhist_5='/data/users/amro/fbcode-git/monitoring/watermelon'
 let g:netrw_dirhist_6='/home/amro/dotfiles/scripts'
+let g:netrw_dirhist_7='/etc/modules-load.d'
+let g:netrw_dirhist_8='/etc/netctl/interfaces'

@@ -90,7 +90,7 @@ nmap <C-B> :ConqueTermTab bash<cr>
 nmap <C-T> :NERDTree<cr>
 nmap <C-Right> :tabnext<cr>
 nmap <C-Left> :tabprevious<cr>
-vmap <C-C> :call Pastebin()<cr>
+"vmap <C-C> :call Pastebin()<cr>
 vmap <C-E> :call Email()<cr>
 set mouse=a
 set background=light
