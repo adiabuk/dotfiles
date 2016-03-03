@@ -17,8 +17,9 @@ alias ll='ls -l'
 alias json='python -mjson.tool'
 alias xml='xmllint --format'
 alias cdtmp='cd `mktemp -d /tmp/$USER-XXXXXX`'
+alias webserver='python2 -mSimpleHTTPServer'
 
-export LANG=en_US.UTF-3
+export LANG=en_US.UTF-8
 export HISTFILESIZE=-1
 export HISTSIZE=130000
 shopt -s histappend

@@ -9,5 +9,7 @@
     "xfce4": ".config/xfce4",
     "bashrc": ".bashrc",
     "xprofile": ".xprofile",
-    "git-completion.bash": "git-completion.bash"
+    "git-completion.bash": "git-completion.bash",
+		"profile": ".profile",
+		"git-aliases": "git-aliases"
 }

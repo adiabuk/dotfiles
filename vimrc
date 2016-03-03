@@ -124,3 +124,4 @@ endif
 " let g:PyLintSigns = 1
 nmap <C-P> :PyLint<CR>
 colorscheme darkblue
+set conceallevel=0
