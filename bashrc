@@ -10,10 +10,12 @@ alias vi='vim'
 if [[ $platform == 'mac' ]]; then
   alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw';
 else
+	[[ -f `which gvim 2>/dev/null` ]] && alias vim='gvim -v'
   alias emacs='emacs -nw'
 fi
 
 alias ll='ls -l'
+alias ssh='ssh -Y'
 alias json='python -mjson.tool'
 alias xml='xmllint --format'
 alias cdtmp='cd `mktemp -d /tmp/$USER-XXXXXX`'

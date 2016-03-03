@@ -75,7 +75,7 @@ function Pastebin() range
 endfunction
 
 function Email() range
-  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).'| strings|mail -s "VIM output" amro@fb.com')
+  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).'| strings|mail -s "VIM output" adiab@hotmail.co.uk')
 endfunction
 
 function Detatch() range
@@ -90,7 +90,9 @@ nmap <C-B> :ConqueTermTab bash<cr>
 nmap <C-T> :NERDTree<cr>
 nmap <C-Right> :tabnext<cr>
 nmap <C-Left> :tabprevious<cr>
-"vmap <C-C> :call Pastebin()<cr>
+vmap <C-P> :call Pastebin()<cr>
+"vmap <C-C> :call Clipboard()<cr>
+vnoremap <C-C> "+y
 vmap <C-E> :call Email()<cr>
 set mouse=a
 set background=light
@@ -117,11 +119,10 @@ if match($TERM, "screen")!=-1
   set term=xterm
 endif
 
-
-
 " let g:PyLintCWindow = 1
 "let g:PyLintSigns = 1
 " let g:PyLintSigns = 1
 nmap <C-P> :PyLint<CR>
 colorscheme darkblue
 set conceallevel=0
+
