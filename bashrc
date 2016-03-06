@@ -14,6 +14,9 @@ else
   alias emacs='emacs -nw'
 fi
 
+[[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && \
+	source /usr/share/doc/pkgfile/command-not-found.bash
+
 alias ll='ls -l'
 alias ssh='ssh -Y'
 alias json='python -mjson.tool'
