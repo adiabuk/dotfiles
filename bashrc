@@ -23,10 +23,11 @@ alias json='python -mjson.tool'
 alias xml='xmllint --format'
 alias cdtmp='cd `mktemp -d /tmp/$USER-XXXXXX`'
 alias webserver='python2 -mSimpleHTTPServer'
-
+alias clipboard='xsel -i -b'
 export LANG=en_US.UTF-8
 export HISTFILESIZE=-1
 export HISTSIZE=130000
+export VISUAL=vim
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -n"
 export TERM=xterm-256color
