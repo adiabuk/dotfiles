@@ -16,17 +16,21 @@ fi
 
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && \
 	source /usr/share/doc/pkgfile/command-not-found.bash
-
+eval $(dircolors)
+alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -l'
+alias grep='grep --color'
 alias ssh='ssh -Y'
 alias json='python -mjson.tool'
 alias xml='xmllint --format'
 alias cdtmp='cd `mktemp -d /tmp/$USER-XXXXXX`'
 alias webserver='python2 -mSimpleHTTPServer'
 alias clipboard='xsel -i -b'
+alias pastebin='~/bin/paste'
 export LANG=en_US.UTF-8
 export HISTFILESIZE=-1
 export HISTSIZE=130000
+export HISTCONTROL=ignoredups
 export VISUAL=vim
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -n"
@@ -39,3 +43,7 @@ export PATH=$PATH:~/bin
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
 source ~/git-completion.bash
+
+function wt() {
+        [ `which $1` ] && while true; do "$1"; done
+}

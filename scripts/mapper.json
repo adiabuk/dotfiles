@@ -11,5 +11,6 @@
     "xprofile": ".xprofile",
     "git-completion.bash": "git-completion.bash",
 		"profile": ".profile",
-		"git-aliases": "git-aliases"
+		"git-aliases": "git-aliases",
+		"inputrc": ".inputrc"
 }
