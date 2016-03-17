@@ -126,3 +126,6 @@ nmap <C-P> :PyLint<CR>
 colorscheme darkblue
 set conceallevel=0
 
+" powerline: https://github.com/powerline/powerline
+set rtp+=/home/amro/powerline/powerline/bindings/vim
+set laststatus=2
