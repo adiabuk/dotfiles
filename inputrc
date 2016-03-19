@@ -1,6 +1,7 @@
 set completion-ignore-case On
 #Tab: menu-complete
 
+# command substituations
 "SS": "sudo "
 "SV": "sudo vim "
 "SP": "sudo pacman "

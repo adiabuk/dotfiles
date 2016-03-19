@@ -1,3 +1,2 @@
-setxkbmap -option terminate:ctrl_alt_bksp
 xfconf-query -c xsettings -p '/Gtk/IconSizes' -s 'gtk-menu=52,52'
 

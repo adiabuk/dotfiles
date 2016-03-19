@@ -1,10 +1,8 @@
 
 set nocompatible
 filetype off
-"""""""""""""""""""""""""""""""
-set nocompatible              " be iMproved, required
-filetype off                  " required
 
+"""""""" Vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -18,6 +16,7 @@ Plugin 'scrooloose/syntastic'
 call vundle#end()            " required
 """"""""""""""""""""""""""""""""
 
+""""""" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -35,9 +34,6 @@ set expandtab
 "
 " general
 "
-
-set nocompatible
-
 set tags=tags;/
 
 " searching
@@ -53,11 +49,10 @@ filetype indent plugin on
 set autoindent
 
 set backspace=2
-set paste
 let g:paste_mode = 1
 " display
 set nolist                    " show/hide tabs and EOL chars
-set number                  " show/hide line numbers (nu/nonu)
+set number                    " show/hide line numbers (nu/nonu)
 set paste
 set scrolloff=5               " scroll offsett, min lines above/below cursor
 set scrolljump=5              " jump 5 lines when running out of the screen
@@ -72,35 +67,22 @@ set noerrorbells              " no bells in terminal
 set undolevels=1000           " number of undos stored
 set viminfo='50,"50           " '=marks for x files, "=registers for x files
 
-"
-" things you may be interested in for your .vimrc
-"
 
-" highlight literal tabs
-" (but don't highlight trailing whitespace; it's annoying as you type)
-" actually even tabs are annoying since they are in e.g. git commit msgs
-" could make it just for php but i'm not sure it's even needed
-"match Error '\t'
-
-" make split windows easier to navigate
-"map <C-j> <C-w>j
-"map <C-k> <C-w>k
-"map <C-h> <C-w>h
-"map <C-l> <C-w>l
-"map <C-m> <C-w>_
-
-" bind "gb" to "git blame" for visual and normal mode.
+" git blame in normal/visual mode
 :vmap gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
 :nmap gb :!git blame %<CR>
 
 set foldenable
 set foldmethod=indent
 
+
 function Pastebin() range
-    echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).'| pastebin')
+	" pipe selection to pastebin
+	echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).'| pastebin')
 endfunction
 
 function Email() range
+	" email selection
   echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).'| strings|mail -s "VIM output" adiab@hotmail.co.uk')
 endfunction
 
@@ -112,7 +94,7 @@ let mapleader=","
 silent !stty -ixon > /dev/null 2>/dev/null
 nnoremap <C-Q> :call Detatch()<cr>
 nmap <C-N> :tabnew<cr>
-nmap <C-B> :ConqueTermTab bash<cr>
+nmap <C-B> :ConqueTermTab bash<cr> " start bash term in new tab
 nmap <C-T> :NERDTree<cr>
 nmap <C-Right> :tabnext<cr>
 nmap <C-Left> :tabprevious<cr>
@@ -136,26 +118,23 @@ highlight TrailSpace guibg=red ctermbg=darkred
 match UnwanttedTab /\t/
 match TrailSpace / \+$/
 
+" Show red column at 80-char limit
 set colorcolumn=80
 highlight ColorColumn ctermbg=blue
 set tw=79
-call pathogen#infect()
 
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
 
-" let g:PyLintCWindow = 1
-"let g:PyLintSigns = 1
-" let g:PyLintSigns = 1
-nmap <C-P> :PyLint<CR>
-colorscheme darkblue   
+colorscheme darkblue
 set conceallevel=0
 syntax on
 
-
+" Show trailing white space in red
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
 " powerline: https://github.com/powerline/powerline
-set rtp+=/home/amro/powerline/powerline/bindings/vim
+set rtp+=~/repos/powerline/powerline/bindings/vim
 set laststatus=2
