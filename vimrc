@@ -1,7 +1,7 @@
 
 set nocompatible
 filetype off
-
+.
 """""""" Vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -15,6 +15,30 @@ Plugin 'scrooloose/syntastic'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 """"""""""""""""""""""""""""""""
+""""""""Tab complete
+function Smart_TabComplete()
+  let line = getline('.')                         " current line
+
+  let substr = strpart(line, -1, col('.')+1)      " from the start of the current
+                                                  " line to one character right
+                                                  " of the cursor
+  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
+  if (strlen(substr)==0)                          " nothing to match on empty string
+    "return "\<tab>"
+    return "\<C-X>\<C-P>"
+  endif
+  let has_period = match(substr, '\.') != -1      " position of period, if any
+  let has_slash = match(substr, '\/') != -1       " position of slash, if any
+  if (!has_period && !has_slash)
+    return "\<C-X>\<C-P>"                         " existing text matching
+  elseif ( has_slash )
+    return "\<C-X>\<C-F>"                         " file matching
+  else
+    return "\<C-X>\<C-O>"                         " plugin matching
+  endif
+endfunction
+
+let g:jedi#popup_on_dot = 0
 
 """"""" Syntastic
 set statusline+=%#warningmsg#
@@ -33,19 +57,13 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Plugin 'kchmck/vim-coffee-script'
-
+Plugin 'davidhalter/jedi-vim'
 syntax enable
 filetype plugin indent on
 """"""""""""""""""""""
 
-set softtabstop=2
-set tabstop=2
-set shiftwidth=2
-set expandtab
+""""""" general
 
-"
-" general
-"
 set tags=tags;/
 
 " searching
@@ -60,12 +78,23 @@ filetype indent plugin on
 " again, most files will be covered by the previous line.
 set autoindent
 
+"""""" Auto Paste mode
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+   set pastetoggle=<Esc>[201~
+   set paste
+return ""
+endfunction
+""""""""""""""
+
 set backspace=2
-let g:paste_mode = 1
 " display
 set nolist                    " show/hide tabs and EOL chars
 set number                    " show/hide line numbers (nu/nonu)
-set paste
 set scrolloff=5               " scroll offsett, min lines above/below cursor
 set scrolljump=5              " jump 5 lines when running out of the screen
 set sidescroll=10             " minumum columns to scroll horizontally
@@ -94,7 +123,7 @@ function Pastebin() range
 endfunction
 
 function Email() range
-	" email selection
+"""""""" email selection
   echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).'| strings|mail -s "VIM output" adiab@hotmail.co.uk')
 endfunction
 
@@ -108,10 +137,10 @@ nnoremap <C-Q> :call Detatch()<cr>
 nmap <C-N> :tabnew<cr>
 nmap <C-B> :ConqueTermTab bash<cr> " start bash term in new tab
 nmap <C-T> :NERDTree<cr>
+inoremap <tab> <c-r>=Smart_TabComplete()<cr>
 nmap <C-Right> :tabnext<cr>
 nmap <C-Left> :tabprevious<cr>
 vmap <C-P> :call Pastebin()<cr>
-"vmap <C-C> :call Clipboard()<cr>
 vnoremap <C-C> "+y
 vmap <C-E> :call Email()<cr>
 set mouse=a
