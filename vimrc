@@ -1,7 +1,6 @@
-
 set nocompatible
 filetype off
-.
+
 """""""" Vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -15,6 +14,7 @@ Plugin 'scrooloose/syntastic'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 """"""""""""""""""""""""""""""""
+
 """"""""Tab complete
 function Smart_TabComplete()
   let line = getline('.')                         " current line
@@ -49,6 +49,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
 """""" Coffee script
 set nocompatible
 filetype off
@@ -92,7 +93,6 @@ endfunction
 """"""""""""""
 
 set backspace=2
-" display
 set nolist                    " show/hide tabs and EOL chars
 set number                    " show/hide line numbers (nu/nonu)
 set scrolloff=5               " scroll offsett, min lines above/below cursor
@@ -135,7 +135,7 @@ let mapleader=","
 silent !stty -ixon > /dev/null 2>/dev/null
 nnoremap <C-Q> :call Detatch()<cr>
 nmap <C-N> :tabnew<cr>
-nmap <C-B> :ConqueTermTab bash<cr> " start bash term in new tab
+nmap <C-B> :ConqueTermTab bash<cr>
 nmap <C-T> :NERDTree<cr>
 inoremap <tab> <c-r>=Smart_TabComplete()<cr>
 nmap <C-Right> :tabnext<cr>
@@ -172,7 +172,8 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 highlight UnwantedTab  guibg=blue ctermbg=darkblue
-match UnwantedTab /\t/
-" powerline: https://github.com/powerline/powerline
+2match UnwantedTab /\t/
+
+
 set rtp+=~/repos/powerline/powerline/bindings/vim
 set laststatus=2
