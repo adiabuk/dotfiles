@@ -25,6 +25,18 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+"""""" Coffee script
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Plugin 'kchmck/vim-coffee-script'
+
+syntax enable
+filetype plugin indent on
+""""""""""""""""""""""
 
 set softtabstop=2
 set tabstop=2
@@ -113,11 +125,6 @@ vmap <Leader>s :sort<cr>
 vnoremap < <gv
 vnoremap > >gv
 
-highlight UnwanttedTab ctermbg=red guibg=darkred
-highlight TrailSpace guibg=red ctermbg=darkred
-match UnwanttedTab /\t/
-match TrailSpace / \+$/
-
 " Show red column at 80-char limit
 set colorcolumn=80
 highlight ColorColumn ctermbg=blue
@@ -135,6 +142,8 @@ syntax on
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+highlight UnwantedTab  guibg=blue ctermbg=darkblue
+match UnwantedTab /\t/
 " powerline: https://github.com/powerline/powerline
 set rtp+=~/repos/powerline/powerline/bindings/vim
 set laststatus=2
