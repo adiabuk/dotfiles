@@ -1,29 +1,32 @@
 #!/usr/bin/env python
 
+"""
+Small script to symlink dotfiles from repo clone
+"""
+
 import calendar
 import time
 import json
 import os
 
-home = os.getenv('HOME')
-raw = open('mapper.json', 'r').read()
-ctime = calendar.timegm(time.gmtime())
-data = json.loads(raw)
+REAL_PATH = os.path.dirname(os.path.realpath(__file__))
+HOME = os.getenv('HOME')
+RAW = open(REAL_PATH + '/mapper.json', 'r').read()
+CTIME = calendar.timegm(time.gmtime())
+DATA = json.loads(RAW)
 
-for key in data.keys():
+for key in DATA.keys():
     source = os.path.abspath('../{}'.format(key))
-    dest = '{}/{}'.format(home, data[key])
+    DEST = '{}/{}'.format(HOME, DATA[key])
     print("Creating symlink {}".format(key))
-    print('dest: {}'.format(dest))
-    
-    if os.path.exists(dest):
-        print('renaming to {}.{}'.format(dest, ctime))
-        os.rename(dest, '{}.{}'.format(dest, ctime))
-    elif os.path.islink(dest):
-        os.unlink(dest)
+    print('dest: {}'.format(DEST))
+
+    if os.path.exists(DEST):
+        print('renaming to {}.{}'.format(DEST, CTIME))
+        os.rename(DEST, '{}.{}'.format(DEST, CTIME))
+    elif os.path.islink(DEST):
+        os.unlink(DEST)
     try:
-        os.symlink(source, dest)
+        os.symlink(source, DEST)
     except Exception as e:
-        print('Failed: ../{} to {}: {}'.format(source, dest, e))
-    
- 
+        print('Failed: ../{} to {}: {}'.format(source, DEST, e))
