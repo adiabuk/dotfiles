@@ -38,7 +38,9 @@ Date $alignr ${time %A %d %B %Y}
 Time $alignr ${color red}${time %H:%M:%S %Z}$color
 Hostname $alignr $nodename
 Load Avg $alignr $loadavg
-
+Battery Percentage $alignr ${execi 240 ~/bin/battery.sh percent}
+Battery State $alignr ${execi 240 ~/bin/battery.sh state}
+Battery Time Remaining $alignr ${execi 240 ~/bin/battery.sh time}
 
 # CPU
 ${font Open Sans:Bold:size=10}${color gray99}CPU${hr 2}
