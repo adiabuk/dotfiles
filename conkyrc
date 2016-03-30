@@ -34,7 +34,7 @@ TEXT
 ${font Open Sans:Bold:size=10}${color gray99}SYSTEM${hr 2}$color${font}
 $sysname $kernel $alignr $machine
 Uptime $alignr $uptime
-Date $alignr ${time %B %d %Y}
+Date $alignr ${time %A %d %B %Y}
 Time $alignr ${color red}${time %H:%M:%S %Z}$color
 Hostname $alignr $nodename
 Load Avg $alignr $loadavg
@@ -66,7 +66,7 @@ $mem / $memmax $alignr $memperc %
 $membar
 
 ${font Open Sans:bold:size=8.5}SWAP$font
-$swap / $swapmax $alignr $swapperc
+$swap / $swapmax $alignr $swapperc %
 ${swapbar};
 
 # HDD
