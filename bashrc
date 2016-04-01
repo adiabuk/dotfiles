@@ -6,7 +6,7 @@ if [[ "$unamestr" == 'Linux' ]]; then
 elif [[ "$unamestr" == 'Darwin' ]]; then
   platform='mac'
 else
-	platform='unknown'
+  platform='unknown'
 fi
 
 # How to start vim
@@ -14,14 +14,14 @@ alias vi='vim'
 if [[ $platform == 'mac' ]]; then
   alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw';
 else
-	# only alias if gvim exists
-	[[ -f $(which gvim 2>/dev/null) ]] && alias vim='gvim -v'
+  # only alias if gvim exists
+  [[ -f $(which gvim 2>/dev/null) ]] && alias vim='gvim -v'
   alias emacs='emacs -nw'
 fi
 
 # command completion
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && \
-	source /usr/share/doc/pkgfile/command-not-found.bash
+  source /usr/share/doc/pkgfile/command-not-found.bash
 source ~/git-completion.bash # git completion
 
 eval "$(dircolors)" # show files and directories with std colors
@@ -38,7 +38,8 @@ alias cdtmp='cd `mktemp -d /tmp/$USER-XXXXXX`' # create and enter new tmp dir
 alias webserver='python2 -mSimpleHTTPServer' # start a weberver (port as arg)
 alias clipboard='xsel -i -b' # send stdin to clipboard
 alias pastebin='~/bin/paste' # send stdin to pastebin
-
+alias hdmi_on='xrandr --output HDMI1 --mode 1920x1080 --right-of eDP1'
+alias hdmi_off='xrandr --output HDMI1 --off'
 # bash history
 export HISTFILESIZE=-1 # Number of lines on disk ~/.bash_history
 export HISTSIZE=130000 # Number of lines in memory
@@ -63,19 +64,19 @@ eval "$(rbenv init -)"
 
 # functions
 function wt() {
-	# loop command until interrupted
-	[ "$(which "$1")" ] && while true; do "$1"; done
+  # loop command until interrupted
+  [ "$(which "$1")" ] && while true; do "$1"; done
 }
 
 ## Powerline Shell 
 ## https://github.com/milkbikis/powerline-shell
 function _update_ps1() {
-	# update PS1 for powerline
-	PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+  # update PS1 for powerline
+  PS1="$(~/powerline-shell.py $? 2> /dev/null)"
 }
 
 if [ "$TERM" != "linux" ]; then
-	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+  PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 else
 # fallback PS1
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]

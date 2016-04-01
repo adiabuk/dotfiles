@@ -1,6 +1,10 @@
 set nocompatible
 filetype off
 
+set tabstop=2
+set shiftwidth=4
+set expandtab
+
 """""""" Vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
