@@ -135,9 +135,25 @@ function Detatch() range
   echo system('screen -d')
 endfunction
 
+function! Setup_ExecNDisplay()
+  " prompt for arguments and execute current script with them
+  " view output in new tab
+  execute "w"
+  execute "silent !chmod +x %:p"
+  let name=expand('%:t')
+  let arguments = input('Enter arguments:')
+  execute "silent !%:p " . arguments . " 2>&1 | tee /tmp/output_" . name
+  "execute "split /tmp/output_" . name
+  execute "tabnew /tmp/output_" . name
+  execute "redraw!"
+  set autoread
+endfunction
+
+
 let mapleader=","
 silent !stty -ixon > /dev/null 2>/dev/null
 nnoremap <C-Q> :call Detatch()<cr>
+nmap <C-E> :call Setup_ExecNDisplay()<CR>
 nmap <C-N> :tabnew<cr>
 nmap <C-B> :ConqueTermTab fish<cr>
 nmap <C-T> :NERDTree<cr>
