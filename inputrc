@@ -5,3 +5,4 @@ set completion-ignore-case On
 "SS": "sudo "
 "SV": "sudo vim "
 "SP": "sudo pacman "
+"LL": "xscreensaver-command -lock"

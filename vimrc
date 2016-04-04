@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 
 set tabstop=2
-set shiftwidth=4
+set shiftwidth=2
 set expandtab
 
 """""""" Vundle

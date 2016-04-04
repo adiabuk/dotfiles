@@ -31,7 +31,7 @@ alias ls='ls --color=auto --group-directories-first' # use color and group dirs
 alias ll='ls -l'
 alias grep='grep --color' # use color in grep
 alias ssh='ssh -Y' # X11 forwarding for vim yank to clipboard
-[[ $platform == "Linux" ]] && alias open='xdg-open' # don't do on mac
+[[ $platform == "linux" ]] && alias open='xdg-open' # don't do on mac
 alias json='python -mjson.tool' # pretty print json from stdin
 alias xml='xmllint --format' # pretty print xml from stdin
 alias cdtmp='cd `mktemp -d /tmp/$USER-XXXXXX`' # create and enter new tmp dir
@@ -63,12 +63,27 @@ eval "$(rbenv init -)"
 
 
 # functions
+
+function volume() {
+  amixer set Master ${1}%
+}
+
+function countdown() {
+  # countdown number of seconds
+
+  seconds=$1
+  date1=$((`date +%s` + $seconds -1));
+  while [ "$date1" -ge `date +%s` ]; do
+    echo -ne "$(date -u --date @$(($date1 - `date +%s` )) +%H:%M:%S)\r";
+  done
+}
+
 function wt() {
   # loop command until interrupted
   [ "$(which "$1")" ] && while true; do "$1"; done
 }
 
-## Powerline Shell 
+## Powerline Shell
 ## https://github.com/milkbikis/powerline-shell
 function _update_ps1() {
   # update PS1 for powerline
@@ -83,4 +98,3 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]
 \u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 fi
-##################################################
