@@ -1,0 +1,10 @@
+table Icon
+  Caption: Slack
+  Command: slack
+  Icon: /home/amro/.idesktop/images/slack.png
+  Width: 48
+  Height: 48
+  X: 119
+  Y: 199
+end
+

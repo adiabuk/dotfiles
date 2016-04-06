@@ -1,0 +1,10 @@
+table Icon
+  Caption: Terminator
+  Command: terminator
+  Icon: /home/amro/.idesktop/images/terminator.png
+  Width: 48
+  Height: 48
+  X: 119
+  Y: 19
+end
+

@@ -1,0 +1,10 @@
+table Icon
+  Caption: Chrome
+  Command: chromium
+  Icon: /home/amro/.idesktop/images/chrome.png
+  Width: 48
+  Height: 48
+  X: 119
+  Y: 299
+end
+

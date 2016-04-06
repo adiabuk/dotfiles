@@ -1,0 +1,10 @@
+table Icon
+  Caption: VLC
+  Command: vlc
+  Icon: /home/amro/.idesktop/images/vlc.png
+  Width: 48
+  Height: 48
+  X: 29
+  Y: 399
+end
+

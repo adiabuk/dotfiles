@@ -13,5 +13,8 @@
     "profile": ".profile",
     "git-aliases": "git-aliases",
     "inputrc": ".inputrc",
-    "conkyrc": ".conkyrc"
+    "conkyrc": ".conkyrc",
+    "ideskrc": ".ideskrc",
+    "idesktop": ".idesktop",
+    "fluxbox": ".fluxbox"
 }

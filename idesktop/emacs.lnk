@@ -1,0 +1,10 @@
+table Icon
+  Caption: emacs
+  Command: emacs
+  Icon: /home/amro/.idesktop/images/emacs.png
+  Width: 48
+  Height: 48
+  X: 29
+  Y: 199
+end
+
