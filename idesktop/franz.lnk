@@ -1,0 +1,10 @@
+table Icon
+  Caption: Franz
+  Command: franz
+  Icon: /home/amro/.idesktop/images/franz.png
+  Width: 48
+  Height: 48
+  X: 29
+  Y: 489
+end
+
