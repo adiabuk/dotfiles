@@ -17,5 +17,6 @@
     "ideskrc": ".ideskrc",
     "idesktop": ".idesktop",
     "fluxbox": ".fluxbox",
-    "xinitrc": ".xinitrc"
+    "xinitrc": ".xinitrc",
+    "conkycal": ".conkycal"
 }

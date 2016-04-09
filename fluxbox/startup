@@ -8,7 +8,12 @@
 xmodmap "/home/amro/.Xmodmap"
 
 xscreensaver -nosplash &
-conky &
+conky -c ~/.conkyrc &
+conky -c ~/.conkycal &
+
+# for some reason need to start conky twice
+# for the background to set - only one instance will be running
+idesk &
 idesk &
 
 # Applications you want to run with fluxbox.

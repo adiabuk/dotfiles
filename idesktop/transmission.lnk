@@ -1,0 +1,10 @@
+table Icon
+  Caption: Transmission
+  Command: transmission-qt
+  Icon: /usr/share/pixmaps/transmission-qt.png
+  Width: 48
+  Height: 48
+  X: 309
+  Y: 19
+end
+

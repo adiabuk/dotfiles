@@ -1,0 +1,10 @@
+table Icon
+  Caption: Trash
+  Command: thunar Trash:///
+  Icon: /home/amro/.idesktop/images/trash.png
+  Width: 48
+  Height: 48
+  X: 299
+  Y: 299
+end
+
