@@ -35,4 +35,4 @@ color2 01C400
 
 
 TEXT
-${execp ~/bin/conky_cal.py}
+${execpi 7200 ~/bin/conky_cal.py}
