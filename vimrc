@@ -155,7 +155,7 @@ silent !stty -ixon > /dev/null 2>/dev/null
 nnoremap <C-Q> :call Detatch()<cr>
 nmap <C-E> :call Setup_ExecNDisplay()<CR>
 nmap <C-N> :tabnew<cr>
-nmap <C-B> :ConqueTermTab fish<cr>
+nmap <C-B> :ConqueTermTab bash<cr>
 nmap <C-T> :NERDTree<cr>
 inoremap <tab> <c-r>=Smart_TabComplete()<cr>
 nmap <C-Right> :tabnext<cr>

@@ -49,7 +49,6 @@ shopt -s histappend
 
 export VISUAL=vim
 export LANG=en_US.UTF-8
-export TERM=xterm-256color
 
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -90,7 +89,7 @@ function _update_ps1() {
   PS1="$(~/powerline-shell.py $? 2> /dev/null)"
 }
 
-if [ "$TERM" != "linux" ]; then
+if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ]; then
   PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 else
 # fallback PS1
