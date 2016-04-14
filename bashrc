@@ -40,6 +40,9 @@ alias clipboard='xsel -i -b' # send stdin to clipboard
 alias pastebin='~/bin/paste' # send stdin to pastebin
 alias hdmi_on='xrandr --output HDMI1 --mode 1920x1080 --right-of eDP1'
 alias hdmi_off='xrandr --output HDMI1 --off'
+alias sudo='sudo '
+alias pacman='pacwait'
+
 # bash history
 export HISTFILESIZE=-1 # Number of lines on disk ~/.bash_history
 export HISTSIZE=130000 # Number of lines in memory
@@ -79,7 +82,7 @@ function countdown() {
 
 function wt() {
   # loop command until interrupted
-  [ "$(which "$1")" ] && while true; do "$1"; done
+  [ "$(which "$1")" ] && while true; do "$@"; done
 }
 
 ## Powerline Shell
@@ -90,10 +93,10 @@ function _update_ps1() {
 }
 
 if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ]; then
+  export TERM=xterm-256color
   PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 else
-# fallback PS1
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]
-\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-
+  # fallback PS1
+  export TERM=xterm
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$ '
 fi
