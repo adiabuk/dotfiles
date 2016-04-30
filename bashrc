@@ -66,6 +66,21 @@ eval "$(rbenv init -)"
 
 # functions
 
+function find_and_install() {
+  # parses output from command-not-found-hook and installs last reccommended
+  # package (arch linux)
+  command=$1
+  package=$($command 2>/dev/null|tail -1 | awk {'print $1'})
+  echo $package
+  if [[ -z $package ]]; then
+    echo "unable to find $command"
+  else
+    sudo pacman -S $package 
+  fi
+
+
+}
+
 function volume() {
   amixer set Master ${1}%
 }

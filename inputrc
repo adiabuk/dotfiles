@@ -6,3 +6,4 @@ set completion-ignore-case On
 "SV": "sudo vim "
 "SP": "sudo pacman -S "
 "LL": "xscreensaver-command -lock"
+"II": "find_and_install "
