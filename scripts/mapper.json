@@ -18,5 +18,6 @@
     "idesktop": ".idesktop",
     "fluxbox": ".fluxbox",
     "xinitrc": ".xinitrc",
-    "conkycal": ".conkycal"
+    "conkycal": ".conkycal",
+    "autostart": ".config/autostart"
 }
