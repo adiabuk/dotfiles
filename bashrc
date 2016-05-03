@@ -72,6 +72,7 @@ function ut() {
   # eg. ut git push
   until $@; do
     echo "trying again" >&2
+    sleep 5
   done
 }
 
