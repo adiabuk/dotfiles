@@ -66,16 +66,25 @@ eval "$(rbenv init -)"
 
 # functions
 
+function ut() {
+  # until true
+  # run command until it succeeds
+  # eg. ut git push
+  until $@; do
+    echo "trying again" >&2
+  done
+}
+
 function find_and_install() {
   # parses output from command-not-found-hook and installs last reccommended
   # package (arch linux)
-  command=$1
+  command =$1
   package=$($command 2>/dev/null|tail -1 | awk {'print $1'})
   echo $package
   if [[ -z $package ]]; then
     echo "unable to find $command"
   else
-    sudo pacman -S $package 
+    sudo pacman -S $package
   fi
 
 
