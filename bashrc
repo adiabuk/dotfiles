@@ -51,7 +51,7 @@ export PROMPT_COMMAND="history -a; history -n"
 shopt -s histappend
 
 export VISUAL=vim
-export LANG=en_US.UTF-8
+export LANG=en_GB.UTF-8
 
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
