@@ -17,8 +17,10 @@ else
   # only alias if gvim exists
   [[ -f $(which gvim 2>/dev/null) ]] && alias vim='gvim -v'
   alias emacs='emacs -nw'
+
 fi
 
+alias vim100='vim -c "set colorcolumn=101"'
 # command completion
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && \
   source /usr/share/doc/pkgfile/command-not-found.bash
