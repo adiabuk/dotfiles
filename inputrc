@@ -2,8 +2,9 @@ set completion-ignore-case On
 #Tab: menu-complete
 
 # command substituations
-"SS": "sudo "
+"SS": "systemctl suspend"
+"HH": "systemctl hibernate"
 "SV": "sudo vim "
 "SP": "sudo pacman -S "
 "LL": "xscreensaver-command -lock"
-"II": "find_and_install "
+"II": "find_and_install $_"
