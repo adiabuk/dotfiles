@@ -81,7 +81,7 @@ function ut() {
 function find_and_install() {
   # parses output from command-not-found-hook and installs last reccommended
   # package (arch linux)
-  command =$1
+  command=$1
   package=$($command 2>/dev/null|tail -1 | awk {'print $1'})
   echo $package
   if [[ -z $package ]]; then
