@@ -48,9 +48,13 @@ alias pacman='pacwait'
 # bash history
 export HISTFILESIZE=-1 # Number of lines on disk ~/.bash_history
 export HISTSIZE=130000 # Number of lines in memory
-export HISTCONTROL=ignoredups
-export PROMPT_COMMAND="history -a; history -n"
+export HISTCONTROL=ignoreboth:erasedups
+export HISTIGNORE="ls:cd:exit:clear"
+export PROMPT_COMMAND="history -a; history -r; history -n"
+PROMPT_COMMAND="history -a;history -c; history -r;$PROMPT_COMMAND"
+shopt -s cmdhist
 shopt -s histappend
+shopt -s checkwinsize
 
 export VISUAL=vim
 export LANG=en_GB.UTF-8
