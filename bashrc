@@ -44,6 +44,9 @@ alias hdmi_on='xrandr --output HDMI1 --mode 1920x1080 --right-of eDP1'
 alias hdmi_off='xrandr --output HDMI1 --off'
 alias sudo='sudo '
 alias pacman='pacwait'
+alias col_sum="awk '{s+=$NF} END {print s}" # FIXME - read in arg for col num
+alias df="df -t ext4 --total"
+alias which='which_function'
 
 # bash history
 export HISTFILESIZE=-1 # Number of lines on disk ~/.bash_history
@@ -71,6 +74,18 @@ eval "$(rbenv init -)"
 
 
 # functions
+
+function which_function(){
+  # use with alias of which to also resolve functions and aliases as well as
+  # files
+
+  shopt -s extdebug
+  if [[ -z $1 ]]; then
+    /bin/which
+  else
+      declare -F $1 && type -a $1 || alias $1 2>/dev/null || /bin/which $1
+  fi
+}
 
 function ut() {
   # until true
@@ -120,7 +135,7 @@ function wt() {
 ## https://github.com/milkbikis/powerline-shell
 function _update_ps1() {
   # update PS1 for powerline
-  PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+  PS1="$(~/powerline-shell.py --mode compatible --shell bash $? 2> /dev/null)"
 }
 
 if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ]; then
