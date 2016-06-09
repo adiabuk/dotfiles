@@ -61,6 +61,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'davidhalter/jedi-vim'
 syntax enable
@@ -154,9 +155,9 @@ let mapleader=","
 silent !stty -ixon > /dev/null 2>/dev/null
 nnoremap <C-Q> :call Detatch()<cr>
 nmap <C-E> :call Setup_ExecNDisplay()<CR>
-nmap <C-N> :tabnew<cr>
+nmap <C-n> :tabnew<cr>
 nmap <C-B> :ConqueTermTab bash<cr>
-nmap <C-T> :NERDTree<cr>
+nmap <C-T> :NERDTreeToggle<cr>
 inoremap <tab> <c-r>=Smart_TabComplete()<cr>
 nmap <C-Right> :tabnext<cr>
 nmap <C-Left> :tabprevious<cr>
