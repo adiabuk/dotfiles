@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 Small script to symlink dotfiles from repo clone
@@ -31,3 +31,8 @@ for key in DATA.keys():
         os.symlink(source, DEST)
     except Exception as e:
         print('Failed: ../{} to {}: {}'.format(source, DEST, e))
+
+print("\nSetting up vim")
+os.system('vim +VundleInstall +qa')
+
+print('\nDONE')

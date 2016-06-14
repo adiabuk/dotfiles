@@ -14,7 +14,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'davidhalter/jedi-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 """"""""""""""""""""""""""""""""
@@ -63,7 +63,7 @@ call vundle#rc()
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'scrooloose/syntastic'
 syntax enable
 filetype plugin indent on
 """"""""""""""""""""""
