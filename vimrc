@@ -195,6 +195,5 @@ match ExtraWhitespace /\s\+$/
 highlight UnwantedTab  guibg=blue ctermbg=darkblue
 2match UnwantedTab /\t/
 
-
-set rtp+=~/repos/powerline/powerline/bindings/vim
+set rtp+=./.local/lib/python2.7/site-packages/powerline/bindings/vim
 set laststatus=2

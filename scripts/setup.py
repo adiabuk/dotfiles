@@ -34,5 +34,5 @@ for key in DATA.keys():
 
 print("\nSetting up vim")
 os.system('vim +VundleInstall +qa')
-
+os.system('pip install --user git+git://github.com/Lokaltog/powerline --upgrade')
 print('\nDONE')

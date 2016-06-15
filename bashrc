@@ -69,7 +69,7 @@ fi
 setxkbmap -option terminate:ctrl_alt_bksp # alt+ctl+backsp to kill X11
 
 # for ruby
-export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
+export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH:$HOME/.gem/ruby/2.3.0/bin
 eval "$(rbenv init -)"
 
 
