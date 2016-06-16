@@ -24,29 +24,29 @@ alias vim100='vim -c "set colorcolumn=101"'
 # command completion
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && \
   source /usr/share/doc/pkgfile/command-not-found.bash
-source ~/git-completion.bash # git completion
+source ~/bin/git-completion.bash # git completion
 
 eval "$(dircolors)" # show files and directories with std colors
 
 # aliases
-alias ls='ls --color=auto --group-directories-first' # use color and group dirs
-alias ll='ls -l'
-alias grep='grep --color' # use color in grep
-alias ssh='ssh -Y' # X11 forwarding for vim yank to clipboard
-[[ $platform == "linux" ]] && alias open='xdg-open' # don't do on mac
-alias json='python -mjson.tool' # pretty print json from stdin
-alias xml='xmllint --format' # pretty print xml from stdin
-alias cdtmp='cd `mktemp -d /tmp/$USER-XXXXXX`' # create and enter new tmp dir
-alias webserver='python2 -mSimpleHTTPServer' # start a weberver (port as arg)
-alias clipboard='xsel -i -b' # send stdin to clipboard
-alias pastebin='~/bin/paste' # send stdin to pastebin
-alias hdmi_on='xrandr --output HDMI1 --mode 1920x1080 --right-of eDP1'
-alias hdmi_off='xrandr --output HDMI1 --off'
-alias sudo='sudo '
-alias pacman='pacwait'
+alias ls="ls --color=auto --group-directories-first" # use color and group dirs
+alias ll="ls -l"
+alias grep="grep --color" # use color in grep
+alias ssh="ssh -Y" # X11 forwarding for vim yank to clipboard
+[[ $platform == "linux" ]] && alias open="xdg-open" # don"t do on mac
+alias json="python -mjson.tool" # pretty print json from stdin
+alias xml="xmllint --format" # pretty print xml from stdin
+alias cdtmp="cd $(mktemp -d /tmp/$USER-XXXXXX)" # create and enter new tmp dir
+alias webserver="python2 -mSimpleHTTPServer" # start a weberver (port as arg)
+alias clipboard="xsel -i -b" # send stdin to clipboard
+alias pastebin="~/bin/paste" # send stdin to pastebin
+alias hdmi_on="xrandr --output HDMI1 --mode 1920x1080 --right-of eDP1"
+alias hdmi_off="xrandr --output HDMI1 --off"
+alias sudo="sudo "
+alias pacman="pacwait"
 alias col_sum="awk '{s+=$NF} END {print s}" # FIXME - read in arg for col num
 alias df="df -t ext4 --total"
-alias which='which_function'
+alias which="which_function"
 
 # bash history
 export HISTFILESIZE=-1 # Number of lines on disk ~/.bash_history
@@ -83,7 +83,7 @@ function which_function(){
   if [[ -z $1 ]]; then
     /bin/which
   else
-      declare -F $1 && type -a $1 || alias $1 2>/dev/null || /bin/which $1
+      declare -F $1 && type -a "$1" || alias "$1" 2>/dev/null || /bin/which "$1"
   fi
 }
 
@@ -91,7 +91,7 @@ function ut() {
   # until true
   # run command until it succeeds
   # eg. ut git push
-  until $@; do
+  until "$@"; do
     echo "trying again" >&2
     sleep 5
   done
@@ -101,28 +101,28 @@ function find_and_install() {
   # parses output from command-not-found-hook and installs last reccommended
   # package (arch linux)
   command=$1
-  package=$($command 2>/dev/null|tail -1 | awk {'print $1'})
-  echo $package
+  package=$($command 2>/dev/null|tail -1 | awk "{print $1}")
+  echo "$package"
   if [[ -z $package ]]; then
     echo "unable to find $command"
   else
-    sudo pacman -S $package
+    sudo /bin/pacman -S "$package"
   fi
 
 
 }
 
 function volume() {
-  amixer set Master ${1}%
+  amixer set Master "${1}"%
 }
 
 function countdown() {
   # countdown number of seconds
 
   seconds=$1
-  date1=$((`date +%s` + $seconds -1));
-  while [ "$date1" -ge `date +%s` ]; do
-    echo -ne "$(date -u --date @$(($date1 - `date +%s` )) +%H:%M:%S)\r";
+  date1=$(($(date +%s) + $seconds -1));
+  while [ "$date1" -ge "$(date +%s)" ]; do
+    echo -ne "$(date -u --date @$(("$date1" - $(date +%s) )) +%H:%M:%S)\r";
   done
 }
 
