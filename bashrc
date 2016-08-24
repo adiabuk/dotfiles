@@ -29,6 +29,7 @@ source ~/bin/git-completion.bash # git completion
 eval "$(dircolors)" # show files and directories with std colors
 
 # aliases
+alias cls='clear'
 alias ls="ls --color=auto --group-directories-first" # use color and group dirs
 alias ll="ls -l"
 alias grep="grep --color" # use color in grep
@@ -69,7 +70,8 @@ fi
 setxkbmap -option terminate:ctrl_alt_bksp # alt+ctl+backsp to kill X11
 
 # for ruby
-export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH:$HOME/.gem/ruby/2.3.0/bin
+#export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH:$HOME/.gem/ruby/2.3.0/bin
+export PATH=$HOME/.rbenv/versions/2.1.8/bin:$PATH
 eval "$(rbenv init -)"
 
 
