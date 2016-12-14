@@ -48,6 +48,7 @@ alias pacman="pacwait"
 alias col_sum="awk '{s+=$NF} END {print s}" # FIXME - read in arg for col num
 alias df="df -t ext4 --total"
 alias which="which_function"
+alias pip26="sudo python2.6 /usr/bin/pip2"
 
 # bash history
 export HISTFILESIZE=-1 # Number of lines on disk ~/.bash_history
