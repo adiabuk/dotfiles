@@ -49,6 +49,8 @@ alias col_sum="awk '{s+=$NF} END {print s}" # FIXME - read in arg for col num
 alias df="df -t ext4 --total"
 alias which="which_function"
 alias pip26="sudo python2.6 /usr/bin/pip2"
+alias per="cd ~/repos/personal"
+alias eq="cd ~/repos/equinix"
 
 # bash history
 export HISTFILESIZE=-1 # Number of lines on disk ~/.bash_history
@@ -138,7 +140,7 @@ function wt() {
 ## https://github.com/milkbikis/powerline-shell
 function _update_ps1() {
   # update PS1 for powerline
-  PS1="$(~/powerline-shell.py --mode compatible --shell bash $? 2> /dev/null)"
+  PS1="$(~/powerline-shell.py --cwd-mode fancy --mode compatible --colorize-hostname --shell bash $? 2> /dev/null)"
 }
 
 if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ]; then

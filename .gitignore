@@ -7,3 +7,4 @@ ido.last
 emacs.d/session.*
 vim/.netrwhist
 vim/bundle/*
+xfce4/xfconf/xfce-perchannel-xml/thunar.xml
