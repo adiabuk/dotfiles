@@ -9,6 +9,14 @@ else
   platform='unknown'
 fi
 
+# Autostart ssh-agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
+
 # How to start vim
 alias vi='vim'
 if [[ $platform == 'mac' ]]; then
