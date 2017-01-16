@@ -1,11 +1,9 @@
 vlc
 virtalbox
-terminator
 calc
 chrome
 redis-desktop-environment
 slack
-firefox
 thunderbird
 nautilus
 conky
@@ -18,3 +16,8 @@ gnome-calculator
 chromium
 emacs
 gedit
+terminal
+terminator 
+terminator
+google-chrome-stable
+firefox

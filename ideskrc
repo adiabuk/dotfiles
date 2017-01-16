@@ -27,7 +27,7 @@ table Config
   FillStyle: fillinvert
   Background.Delay: 0
   Background.Source: /
-  Background.File: /home/amro/.idesktop/images/shebang.jpg
+  Background.File: /home/amro/.idesktop/images/70.jpg
   Background.Mode: Mirror
   Background.Color: #C2CCFF
 end
