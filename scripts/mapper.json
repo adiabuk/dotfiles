@@ -20,5 +20,6 @@
     "fluxbox": ".fluxbox",
     "xinitrc": ".xinitrc",
     "conkycal": ".conkycal",
-    "autostart": ".config/autostart"
+    "autostart": ".config/autostart",
+    "terminator-config": ".config/terminator/config"
 }

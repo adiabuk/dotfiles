@@ -1,0 +1,19 @@
+[global_config]
+[keybindings]
+  go_down = <Primary><Shift><Alt>Down
+  go_left = <Primary><Shift><Alt>Left
+  go_right = <Primary><Shift><Alt>Right
+  go_up = <Primary><Shift><Alt>Up
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    cursor_color = "#aaaaaa"
