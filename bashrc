@@ -38,7 +38,8 @@ eval "$(dircolors)" # show files and directories with std colors
 
 # aliases
 alias cls='clear'
-alias ls="ls --color=auto --group-directories-first" # use color and group dirs
+# use color and group dirs
+alias ls="ls --color=auto --group-directories-first --ignore=*.pyc"
 alias ll="ls -l"
 alias grep="grep --color" # use color in grep
 alias ssh="ssh -Y" # X11 forwarding for vim yank to clipboard
