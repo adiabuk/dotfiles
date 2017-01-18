@@ -15,8 +15,296 @@
 #   you can change the menu name in ~/.fluxbox/init to:
 #     session.menuFile: ~/.fluxbox/my-menu
 [begin] (Fluxbox)
+[include] (my-menu)
 [encoding] {UTF-8}
       [exec]   (Run) {fbrun} 
+      [separator] 
+       [submenu] (Accessibility)
+     [exec] (Accerciser) {/usr/bin/accerciser}
+     [exec] (Florence Virtual Keyboard) {florence}
+ [end] # (Accessibility)
+ [submenu] (Accessories)
+     [exec] (Archive Manager) {file-roller }
+     [exec] (Atom) {/usr/bin/atom }
+     [exec] (Avant Window Navigator) {avant-window-navigator}
+     [exec] (Calculator) {gnome-calculator}
+     [exec] (Character Map) {gucharmap}
+     [exec] (Characters) {gapplication launch org.gnome.Characters}
+     [exec] (Clocks) {gnome-clocks}
+     [exec] (Conky Manager) {conky-manager }
+     [exec] (Disks) {gnome-disks}
+     [exec] (Elementary Test) {elementary_test}
+     [exec] (Engrampa Archive Manager) {engrampa }
+     [exec] (Files) {nautilus --new-window }
+     [exec] (Font Viewer) {gnome-font-viewer }
+     [exec] (GVim) {gvim -f }
+     [exec] (Galculator) {galculator}
+     [exec] (HP Device Manager) {hp-toolbox}
+     [exec] (Klipper) {klipper}
+     [exec] (Main Menu) {alacarte}
+     [exec] (Maps) {gapplication launch org.gnome.Maps}
+     [exec] (Plank) {plank}
+     [exec] (Pluma) {pluma }
+     [exec] (Root Terminal) {gksu -l gnome-terminal}
+     [exec] (Screenshot) {gnome-screenshot --interactive}
+     [exec] (Spectacle) {spectacle}
+     [exec] (Sublime Text) {subl }
+     [exec] (Text Editor) {gedit }
+     [exec] (Weather) {gapplication launch org.gnome.Weather.Application}
+     [exec] (ipython) {xterm -e ipython}
+     [exec] (ipython2) {xterm -e ipython2}
+ [end] # (Accessories)
+ [submenu] (Education)
+     [exec] (LibreOffice Math) {libreoffice --math }
+ [end] # (Education)
+ [submenu] (Games)
+     [exec] (0 A.D.) {0ad}
+     [exec] (2048) {gnome-2048}
+     [exec] (Abuse) {abuse}
+     [exec] (AisleRiot Solitaire) {sol}
+     [exec] (Alien Arena) {alienarena}
+     [exec] (Armagetron Advanced) {armagetronad}
+     [exec] (AssaultCube) {assaultcube}
+     [exec] (Atomic Tanks) {atanks}
+     [exec] (Atomix) {atomix}
+     [exec] (Barrage) {barrage}
+     [exec] (Battle Tanks!) {btanks}
+     [exec] (Battle for Wesnoth) {wesnoth}
+     [exec] (Battle for Wesnoth Map Editor) {wesnoth -e}
+     [exec] (Blob Wars : Metal Blob Solid) {blobwars}
+     [exec] (Blobby Volley 2) {blobby}
+     [exec] (Block Attack!) {blocks}
+     [exec] (Bomber) {bomber -qwindowtitle Bomber}
+     [exec] (BomberClone) {bomberclone}
+     [exec] (Checkers) {checkers}
+     [exec] (Chess) {gnome-chess}
+     [exec] (Critical Mass) {critter}
+     [exec] (Cuyo) {cuyo}
+     [exec] (Deepin Game) {deepin-game-center}
+     [exec] (Dosbox) {dosbox}
+     [exec] (Five or More) {five-or-more}
+     [exec] (FlightGear) {fgfs --fg-root=/usr/share/flightgear/data}
+     [exec] (Flobopuyo) {flobopuyo}
+     [exec] (Four-in-a-row) {four-in-a-row}
+     [exec] (Freeciv (gtk3)) {freeciv-gtk3}
+     [exec] (Freeciv modpack installer (gtk3)) {freeciv-mp-gtk3}
+     [exec] (Freeciv server) {xterm -e freeciv-server}
+     [exec] (Freedroid RPG) {freedroidRPG}
+     [exec] (Frozen Bubble) {/usr/bin/vendor_perl/frozen-bubble}
+     [exec] (GNU Backgammon) {gnubg}
+     [exec] (GTetrinet) {gtetrinet}
+     [exec] (Hearts) {gnome-hearts}
+     [exec] (Hitori) {hitori}
+     [exec] (Iagno) {iagno}
+     [exec] (KAtomic) {katomic -qwindowtitle KAtomic}
+     [exec] (KBlackBox) {kblackbox -qwindowtitle KBlackBox}
+     [exec] (KBlocks) {kblocks -qwindowtitle KBlocks}
+     [exec] (KBounce) {kbounce -qwindowtitle KBounce}
+     [exec] (KBreakOut) {kbreakout -qwindowtitle KBreakOut}
+     [exec] (KSnakeDuel) {ksnakeduel -caption KSnakeDuel }
+     [exec] (Kajongg) {kajongg}
+     [exec] (Kapman) {kapman}
+     [exec] (Kcheckers) {kcheckers}
+     [exec] (Klotski) {gnome-klotski}
+     [exec] (Lights Off) {lightsoff}
+     [exec] (Lincity-NG) {lincity-ng}
+     [exec] (Linux Breakout 2) {lbreakout2}
+     [exec] (Mahjongg) {gnome-mahjongg}
+     [exec] (Mari0) {mari0}
+     [exec] (Mines) {gnome-mines}
+     [exec] (Naev) {naev}
+     [exec] (Neverball) {neverball}
+     [exec] (Neverputt) {neverputt}
+     [exec] (Nibbles) {gnome-nibbles}
+     [exec] (Oolite) {oolite}
+     [exec] (OpenLieroX) {openlierox}
+     [exec] (PainTown) {paintown}
+     [exec] (Quadrapassel) {quadrapassel}
+     [exec] (Ren'Py) {renpy}
+     [exec] (RetroArch) {retroarch}
+     [exec] (Robots) {gnome-robots}
+     [exec] (Sauerbraten) {sauerbraten-client }
+     [exec] (Slime Volley) {slimevolley}
+     [exec] (Speed Dreams) {speed-dreams-2}
+     [exec] (Sudoku) {sudoku}
+     [exec] (Sudoku) {gnome-sudoku}
+     [exec] (SuperTux 2) {supertux2}
+     [exec] (SuperTuxKart) {supertuxkart}
+     [exec] (Swell Foop) {swell-foop}
+     [exec] (TORCS) {torcs}
+     [exec] (Tali) {tali}
+     [exec] (Taquin) {gnome-taquin}
+     [exec] (Tetravex) {gnome-tetravex}
+     [exec] (Warzone 2100) {warzone2100}
+     [exec] (Xonotic (GLX)) {/usr/bin/xonotic-glx}
+     [exec] (Xonotic (SDL)) {/usr/bin/xonotic-sdl}
+     [exec] (dopewars) {dopewars}
+     [exec] (picmi) {picmi}
+ [end] # (Games)
+ [submenu] (Graphics)
+     [exec] (Document Viewer) {evince }
+     [exec] (Eye of MATE Image Viewer) {eom }
+     [exec] (FontForge) {fontforge }
+     [exec] (GNU Image Manipulation Program) {gimp-2.8 }
+     [exec] (Image Viewer) {eog }
+     [exec] (Inkscape) {inkscape }
+     [exec] (LibreOffice Draw) {libreoffice --draw }
+ [end] # (Graphics)
+ [submenu] (Internet)
+     [exec] (Avahi SSH Server Browser) {/usr/bin/bssh}
+     [exec] (Avahi VNC Server Browser) {/usr/bin/bvnc}
+     [exec] (Chromium) {chromium }
+     [exec] (Dropbox) {dropbox}
+     [exec] (ELinks) {xterm -e /usr/bin/elinks }
+     [exec] (Empathy) {empathy}
+     [exec] (Firefox) {firefox }
+     [exec] (Franz) {franz -- }
+     [exec] (Google Chrome) {/usr/bin/google-chrome-stable }
+     [exec] (Insync) {insync start}
+     [exec] (Licq) {licq}
+     [exec] (Polari) {gapplication launch org.gnome.Polari}
+     [exec] (Qtransmission Bittorrent Client) {transmission-qt }
+     [exec] (Remote Desktop Viewer) {vinagre }
+     [exec] (Skype) {skype }
+     [exec] (Slack) {/usr/bin/slack --disable-gpu }
+     [exec] (Thunderbird) {thunderbird }
+     [exec] (Transmission) {transmission-gtk }
+     [exec] (Web) {epiphany }
+     [exec] (Wireshark) {wireshark }
+     [exec] (XChat IRC) {xchat}
+     [exec] (Zenmap) {zenmap }
+     [exec] (Zenmap (as root)) {/usr/share/zenmap/su-to-zenmap.sh }
+     [exec] (qutebrowser) {qutebrowser }
+ [end] # (Internet)
+ [submenu] (Office)
+     [exec] (AbiWord) {abiword }
+     [exec] (Atril Document Viewer) {atril }
+     [exec] (Calendar) {gnome-calendar}
+     [exec] (Dictionary) {gnome-dictionary}
+     [exec] (Document Viewer) {evince }
+     [exec] (Gnumeric) {gnumeric }
+     [exec] (LibreOffice) {libreoffice }
+     [exec] (LibreOffice Base) {libreoffice --base }
+     [exec] (LibreOffice Calc) {libreoffice --calc }
+     [exec] (LibreOffice Draw) {libreoffice --draw }
+     [exec] (LibreOffice Impress) {libreoffice --impress }
+     [exec] (LibreOffice Math) {libreoffice --math }
+     [exec] (LibreOffice Writer) {libreoffice --writer }
+ [end] # (Office)
+ [submenu] (Other)
+     [exec] (umongo) {/usr/bin/umongo.sh}
+ [end] # (Other)
+ [submenu] (Programming)
+     [exec] (Accerciser) {/usr/bin/accerciser}
+     [exec] (Anjuta) {anjuta }
+     [exec] (Atom) {/usr/bin/atom }
+     [exec] (Builder) {gnome-builder }
+     [exec] (CMake) {cmake-gui }
+     [exec] (Cuttlefish) {cuttlefish}
+     [exec] (Database browser) {gda-browser-5.0}
+     [exec] (Devhelp) {devhelp}
+     [exec] (Elementary Test) {elementary_test}
+     [exec] (Emacs) {emacs }
+     [exec] (FLUID) {fluid }
+     [exec] (Genymotion) {/usr/bin/genymotion}
+     [exec] (Genymotion Player) {/usr/bin/genymotion-player}
+     [exec] (GitKraken) {"gitkraken"}
+     [exec] (Glade) {glade }
+     [exec] (MongoChef) {/usr/bin/mongochef}
+     [exec] (MySQL Workbench) {mysql-workbench}
+     [exec] (OpenJDK 1.7.0 Monitoring & Management Console) {_BINDIR_/jconsole}
+     [exec] (OpenJDK 1.7.0 Policy Tool) {_BINDIR_/policytool}
+     [exec] (Plasma Look And Feel Explorer) {lookandfeelexplorer}
+     [exec] (Plasma Theme Explorer) {plasmathemeexplorer}
+     [exec] (Plasmate) {plasmate}
+     [exec] (Qt Assistant) {assistant}
+     [exec] (Qt Designer) {designer}
+     [exec] (Qt Linguist) {linguist}
+     [exec] (Qt QDbusViewer ) {qdbusviewer}
+     [exec] (Qt4 Assistant ) {assistant-qt4}
+     [exec] (Qt4 Designer) {designer-qt4}
+     [exec] (Qt4 Linguist ) {linguist-qt4}
+     [exec] (Qt4 QDbusViewer ) {qdbusviewer-qt4}
+     [exec] (Redis Desktop Manager) {rdm}
+     [exec] (Sysprof) {sysprof }
+     [exec] (gitg) {gitg --no-wd }
+     [exec] (ipython) {xterm -e ipython}
+     [exec] (ipython2) {xterm -e ipython2}
+ [end] # (Programming)
+ [submenu] (Science & Maths)
+     [exec] (Gnumeric) {gnumeric }
+ [end] # (Science & Maths)
+ [submenu] (Sound & Video)
+     [exec] (Brasero) {brasero }
+     [exec] (Cheese) {cheese}
+     [exec] (Kaffeine) {kaffeine }
+     [exec] (Kodi media center) {kodi}
+     [exec] (Plasma Media Centre) {plasmashell -ap org.kde.plasma.mediacenter}
+     [exec] (Qt V4L2 test Utility) {qv4l2}
+     [exec] (SMPlayer) {smplayer }
+     [exec] (Sound Recorder) {gnome-sound-recorder}
+     [exec] (Spotify) {spotify }
+     [exec] (UMPlayer) {umplayer }
+     [exec] (VLC media player) {/usr/bin/vlc --started-from-file }
+     [exec] (Videos) {totem }
+     [exec] (mpv Media Player) {mpv --player-operation-mode=pseudo-gui -- }
+ [end] # (Sound & Video)
+ [submenu] (System Tools)
+     [exec] (Avahi Zeroconf Browser) {/usr/bin/avahi-discover}
+     [exec] (BleachBit) {bleachbit}
+     [exec] (Boxes) {gnome-boxes }
+     [exec] (Bulk Rename) {/usr/lib/Thunar/ThunarBulkRename }
+     [exec] (Cairo-Dock) {cairo-dock}
+     [exec] (Cairo-Dock (Fallback Mode)) {cairo-dock -A}
+     [exec] (Colour Profile Viewer) {gcm-viewer}
+     [exec] (Cool Retro Term) {cool-retro-term}
+     [exec] (Discover) {plasma-discover }
+     [exec] (Disk Usage Analyser) {baobab}
+     [exec] (Disk Utility) {mate-disk}
+     [exec] (Emixer) {emixer}
+     [exec] (FSlint) {fslint-gui}
+     [exec] (File Manager PCManFM) {pcmanfm }
+     [exec] (Files) {pantheon-files }
+     [exec] (GParted) {/usr/bin/gparted_polkit }
+     [exec] (Grsync) {/usr/bin/grsync -i }
+     [exec] (Guake Terminal) {guake}
+     [exec] (Htop) {xterm -e htop}
+     [exec] (KSysGuard) {ksysguard }
+     [exec] (KWalletManager) {kwalletmanager5 }
+     [exec] (Konsole) {konsole}
+     [exec] (LSHW) {/usr/sbin/gtk-lshw}
+     [exec] (Logs) {gnome-logs}
+     [exec] (MATE Terminal) {mate-terminal}
+     [exec] (Manage Printing) {/usr/bin/xdg-open http://localhost:631/}
+     [exec] (Nautilus-Actions Configuration Tool) {nautilus-actions-config-tool}
+     [exec] (Network Tools) {gnome-nettool}
+     [exec] (Octopi) {octopi}
+     [exec] (Octopi CacheCleaner) {octopi-cachecleaner}
+     [exec] (Octopi Notifier) {octopi-notifier}
+     [exec] (Octopi Repo Editor) {octopi-repoeditor}
+     [exec] (Oracle VM VirtualBox) {VirtualBox }
+     [exec] (Package Updater) {gpk-update-viewer}
+     [exec] (Packages) {gpk-application}
+     [exec] (Pacman Log Viewer) {plv}
+     [exec] (PkgBrowser) {pkgbrowser}
+     [exec] (Software) {gnome-software }
+     [exec] (System Log) {gnome-system-log}
+     [exec] (System Monitor) {gnome-system-monitor}
+     [exec] (Terminal) {gnome-terminal}
+     [exec] (Terminator) {terminator}
+     [exec] (Thunar File Manager) {thunar }
+     [exec] (Tilda) {/usr/bin/tilda}
+     [exec] (UNetbootin) {/usr/bin/unetbootin}
+     [exec] (UXTerm) {uxterm}
+     [exec] (XTerm) {xterm}
+     [exec] (Yakuake) {yakuake}
+     [exec] (Yaourt-Gui) {xterm -e yaourt-gui}
+     [exec] (dconf Editor) {dconf-editor}
+     [exec] (emelFM2) {/usr/bin/emelfm2}
+     [exec] (urxvt) {urxvt}
+     [exec] (urxvt (client)) {urxvtc}
+     [exec] (urxvt (tabbed)) {urxvt-tabbed}
+ [end] # (System Tools)
       [separator] 
 [submenu] (Terminals)
       [exec]   (xterm) {xterm} 
