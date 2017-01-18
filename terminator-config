@@ -1,9 +1,17 @@
 [global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
 [keybindings]
-  go_down = <Primary><Shift><Alt>Down
-  go_left = <Primary><Shift><Alt>Left
-  go_right = <Primary><Shift><Alt>Right
-  go_up = <Primary><Shift><Alt>Up
+  go_down = None
+  go_left = None
+  go_right = None
+  go_up = None
+  layout_launcher = None
+  next_tab = <Alt><Super>Right
+  prev_tab = <Alt><Super>Left
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  resize_up = None
 [layouts]
   [[default]]
     [[[child1]]]
@@ -15,5 +23,9 @@
 [plugins]
 [profiles]
   [[default]]
+    background_color = "#002b36"
+    background_darkness = 0.65
     background_image = None
+    background_type = transparent
     cursor_color = "#aaaaaa"
+    foreground_color = "#839496"
