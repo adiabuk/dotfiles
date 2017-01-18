@@ -1,2 +1,10 @@
 [include] 
 path = .git-aliases
+[user]
+  email = adiab@hotmail.co.uk
+  name = Amro Diab
+
+[color]
+  ui = off
+[push]
+  default = current
