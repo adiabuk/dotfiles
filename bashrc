@@ -1,5 +1,6 @@
+# vim: fdm=marker
 
-# Determine if Mac or Linux
+# {{{ Determine if Mac or Linux
 unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then
   platform='linux'
@@ -8,16 +9,18 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 else
   platform='unknown'
 fi
+# }}}
 
-# Autostart ssh-agent
+# {{{ Autostart ssh-agent
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing
 fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
+# }}}
 
-# How to start vim
+#{{{ How to start vim
 alias vi='vim'
 if [[ $platform == 'mac' ]]; then
   alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw';
@@ -27,17 +30,17 @@ else
   alias emacs='emacs -nw'
 
 fi
+# }}}
 
-alias vim100='vim -c "set colorcolumn=101"'
-# command completion
+#{{{ command completion
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && \
   source /usr/share/doc/pkgfile/command-not-found.bash
 source ~/bin/git-completion.bash # git completion
+# }}}
 
-eval "$(dircolors)" # show files and directories with std colors
-
-# aliases
+# {{{ aliases
 alias cls='clear'
+alias vim100='vim -c "set colorcolumn=101"'
 # use color and group dirs
 alias ls="ls --color=auto --group-directories-first --ignore=*.pyc"
 alias ll="ls -l"
@@ -60,8 +63,9 @@ alias which="which_function"
 alias pip26="sudo python2.6 /usr/bin/pip2"
 alias per="cd ~/repos/personal"
 alias eq="cd ~/repos/equinix"
+}}}
 
-# bash history
+# {{{ bash history
 export HISTFILESIZE=-1 # Number of lines on disk ~/.bash_history
 export HISTSIZE=130000 # Number of lines in memory
 export HISTCONTROL=ignoreboth:erasedups
@@ -71,28 +75,32 @@ PROMPT_COMMAND="history -a;history -c; history -r;$PROMPT_COMMAND"
 shopt -s cmdhist
 shopt -s histappend
 shopt -s checkwinsize
+}}}
 
+# {{{ vars
 export VISUAL=vim
 export LANG=en_GB.UTF-8
+eval "$(dircolors)" # show files and directories with std colors
 
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
 setxkbmap -option terminate:ctrl_alt_bksp # alt+ctl+backsp to kill X11
+}}}
 
-# for ruby
+# {{{for ruby
 #export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH:$HOME/.gem/ruby/2.3.0/bin
 export PATH=$HOME/.rbenv/versions/2.1.8/bin:$PATH
 eval "$(rbenv init -)"
+#}}}
 
+# {{{ functions
 
-# functions
-
+# {{{ 'which' function
 function which_function(){
-  # use with alias of which to also resolve functions and aliases as well as
-  # files
-
+  # use with alias of which to also resolve functions
+  # and aliases as well as  files
   shopt -s extdebug
   if [[ -z $1 ]]; then
     /bin/which
@@ -100,9 +108,10 @@ function which_function(){
       declare -F $1 && type -a "$1" || alias "$1" 2>/dev/null || /bin/which "$1"
   fi
 }
+# }}}
 
+# {{{ until true
 function ut() {
-  # until true
   # run command until it succeeds
   # eg. ut git push
   until "$@"; do
@@ -110,7 +119,9 @@ function ut() {
     sleep 5
   done
 }
+# }}}
 
+# {{{ retry ping if failed
 function ping() { 
   # Retry ping if failed
   if [[ -z $1 ]]; then
@@ -119,7 +130,9 @@ function ping() {
     ut /bin/ping $@;
   fi
 }
+# }}}
 
+# {{{ find and install function
 function find_and_install() {
   # parses output from command-not-found-hook and installs last reccommended
   # package (arch linux)
@@ -132,13 +145,16 @@ function find_and_install() {
     sudo /bin/pacman -S "$package"
   fi
 
-
 }
+# }}}
 
+# {{{ volume function
 function volume() {
   amixer set Master "${1}"%
 }
+# }}}
 
+# {{{ coundown function 
 function countdown() {
   # countdown number of seconds
 
@@ -148,16 +164,18 @@ function countdown() {
     echo -ne "$(date -u --date @$(("$date1" - $(date +%s) )) +%H:%M:%S)\r";
   done
 }
+# }}}
 
+# {{{ loop command until interrupted
 function wt() {
-  # loop command until interrupted
   [ "$(which "$1")" ] && while true; do "$@"; done
 }
+# }}}
 
-## Powerline Shell
-## https://github.com/milkbikis/powerline-shell
+# {{{ update PS1 for powerline
 function _update_ps1() {
-  # update PS1 for powerline
+  ## Powerline Shell
+  ## https://github.com/milkbikis/powerline-shell
   PS1="$(~/powerline-shell.py --cwd-mode fancy --mode compatible --colorize-hostname --shell bash $? 2> /dev/null)"
 }
 
@@ -169,3 +187,5 @@ else
   export TERM=xterm
   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$ '
 fi
+#}}}
+# }}}
