@@ -1,5 +1,6 @@
 set nocompatible
 filetype off
+set t_Co=256
 
 set tabstop=2
 set shiftwidth=2
@@ -71,6 +72,7 @@ call vundle#rc()
 Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
+Plugin 'Lokaltog/vim-powerline'
 syntax enable
 filetype plugin indent on
 """"""""""""""""""""""
