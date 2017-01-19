@@ -1,4 +1,6 @@
+#!/bin/bash
 # vim: fdm=marker
+# shellcheck disable=SC1091,SC1090
 
 # {{{ Determine if Mac or Linux
 unamestr=$(uname)
@@ -35,7 +37,7 @@ fi
 #{{{ command completion
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && \
   source /usr/share/doc/pkgfile/command-not-found.bash
-source ~/bin/git-completion.bash # git completion
+source "$HOME"/bin/git-completion.bash # git completion
 # }}}
 
 # {{{ aliases
@@ -49,7 +51,7 @@ alias ssh="ssh -Y" # X11 forwarding for vim yank to clipboard
 [[ $platform == "linux" ]] && alias open="xdg-open" # don"t do on mac
 alias json="python -mjson.tool" # pretty print json from stdin
 alias xml="xmllint --format" # pretty print xml from stdin
-alias cdtmp="cd $(mktemp -d /tmp/$USER-XXXXXX)" # create and enter new tmp dir
+alias cdtmp="cd $(mktemp -d /tmp/"$USER"-XXXXXX)" # create and enter new tmp dir
 alias webserver="python2 -mSimpleHTTPServer" # start a weberver (port as arg)
 alias clipboard="xsel -i -b" # send stdin to clipboard
 alias pastebin="~/bin/paste" # send stdin to pastebin
@@ -57,7 +59,7 @@ alias hdmi_on="xrandr --output HDMI1 --mode 1920x1080 --right-of eDP1"
 alias hdmi_off="xrandr --output HDMI1 --off"
 alias sudo="sudo "
 alias pacman="pacwait"
-alias col_sum="awk '{s+=$NF} END {print s}" # FIXME - read in arg for col num
+alias col_sum="awk '{s+=\$NF} END {print s}" # FIXME - read in arg for col num
 alias df="df -t ext4 --total"
 alias which="which_function"
 alias pip26="sudo python2.6 /usr/bin/pip2"
@@ -127,7 +129,7 @@ function ping() {
   if [[ -z $1 ]]; then
     /bin/ping;
   else
-    ut /bin/ping $@;
+    ut /bin/ping "$@";
   fi
 }
 # }}}
@@ -158,8 +160,8 @@ function volume() {
 function countdown() {
   # countdown number of seconds
 
-  seconds=$1
-  date1=$(($(date +%s) + $seconds -1));
+  seconds="$1"
+  date1=$(($(date +%s) + seconds -1));
   while [ "$date1" -ge "$(date +%s)" ]; do
     echo -ne "$(date -u --date @$(("$date1" - $(date +%s) )) +%H:%M:%S)\r";
   done
