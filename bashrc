@@ -111,6 +111,15 @@ function ut() {
   done
 }
 
+function ping() { 
+  # Retry ping if failed
+  if [[ -z $1 ]]; then
+    /bin/ping;
+  else
+    ut /bin/ping $@;
+  fi
+}
+
 function find_and_install() {
   # parses output from command-not-found-hook and installs last reccommended
   # package (arch linux)
