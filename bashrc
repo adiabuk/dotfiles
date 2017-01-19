@@ -63,7 +63,7 @@ alias which="which_function"
 alias pip26="sudo python2.6 /usr/bin/pip2"
 alias per="cd ~/repos/personal"
 alias eq="cd ~/repos/equinix"
-}}}
+# }}}
 
 # {{{ bash history
 export HISTFILESIZE=-1 # Number of lines on disk ~/.bash_history
@@ -75,7 +75,7 @@ PROMPT_COMMAND="history -a;history -c; history -r;$PROMPT_COMMAND"
 shopt -s cmdhist
 shopt -s histappend
 shopt -s checkwinsize
-}}}
+# }}}
 
 # {{{ vars
 export VISUAL=vim
@@ -87,13 +87,13 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 setxkbmap -option terminate:ctrl_alt_bksp # alt+ctl+backsp to kill X11
-}}}
+# }}}
 
 # {{{for ruby
 #export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH:$HOME/.gem/ruby/2.3.0/bin
 export PATH=$HOME/.rbenv/versions/2.1.8/bin:$PATH
 eval "$(rbenv init -)"
-#}}}
+# }}}
 
 # {{{ functions
 
