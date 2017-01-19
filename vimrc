@@ -53,8 +53,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['pylint2']
+let g:syntastic_sh_checkers = ['shellcheck']
+let g:syntastic_sh_shellcheck_args = ['-x']
+let g:syntastic_perl_checkers = ['perl']
+let g:syntastic_cgi_checkers = ['perl']
 
+let g:syntastic_enable_cgi_checker = 1
+let g:syntastic_enable_perl_checker = 1
 """""" Coffee script
 set nocompatible
 filetype off
@@ -172,14 +178,14 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 vmap <Leader>s :sort<cr>
-
+nmap <C-S> :SyntasticToggleMode<CR>
 vnoremap < <gv
 vnoremap > >gv
 
 " Show red column at 80-char limit
 set colorcolumn=80
 highlight ColorColumn ctermbg=blue
-set tw=79
+set tw=80
 
 if match($TERM, "screen")!=-1
   set term=xterm
