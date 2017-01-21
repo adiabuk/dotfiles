@@ -65,6 +65,9 @@ alias which="which_function"
 alias pip26="sudo python2.6 /usr/bin/pip2"
 alias per="cd ~/repos/personal"
 alias eq="cd ~/repos/equinix"
+alias less="less -R"  # parse control characters
+alias f5vpn-login="ut f5vpn-login"
+alias tidy="tidy -config ~/tidy_config.txt"
 # }}}
 
 # {{{ bash history
@@ -187,7 +190,7 @@ if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ]; then
 else
   # fallback PS1
   export TERM=xterm
-  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$ '
+  PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$ '
 fi
 #}}}
 # }}}
