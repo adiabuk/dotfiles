@@ -1,12 +1,6 @@
-set nocompatible
-filetype off
-set t_Co=256
+" vim: fdm=marker
 
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-"""""""" Vundle
+" {{{ Vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -18,9 +12,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'davidhalter/jedi-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-""""""""""""""""""""""""""""""""
+" }}}
 
-""""""""Tab complete
+" {{{ Tab complete
 function Smart_TabComplete()
   let line = getline('.')                         " current line
 
@@ -42,10 +36,9 @@ function Smart_TabComplete()
     return "\<C-X>\<C-O>"                         " plugin matching
   endif
 endfunction
+" }}}
 
-let g:jedi#popup_on_dot = 0
-
-""""""" Syntastic
+" {{{Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -54,15 +47,18 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pylint2']
+let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_sh_shellcheck_args = ['-x']
 let g:syntastic_perl_checkers = ['perl']
 let g:syntastic_cgi_checkers = ['perl']
+let g:syntastic_javascript_checkers = ['jslint']
 
 let g:syntastic_enable_cgi_checker = 1
 let g:syntastic_enable_perl_checker = 1
-"""""" Coffee script
+" }}}
+
+" {{{ More vundle
 set nocompatible
 filetype off
 
@@ -75,9 +71,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-powerline'
 syntax enable
 filetype plugin indent on
-""""""""""""""""""""""
+" }}}
 
-""""""" general
+" {{{general
 
 set tags=tags;/
 
@@ -92,8 +88,9 @@ filetype indent plugin on
 " so i think autoindent is more minimal and good default for all filetypes.
 " again, most files will be covered by the previous line.
 set autoindent
+" }}}
 
-"""""" Auto Paste mode
+" {{{ Auto Paste mode
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
@@ -104,8 +101,9 @@ function! XTermPasteBegin()
    set paste
 return ""
 endfunction
-""""""""""""""
+" }}}
 
+" {{{ Modes
 set backspace=2
 set nolist                    " show/hide tabs and EOL chars
 set number                    " show/hide line numbers (nu/nonu)
@@ -121,16 +119,14 @@ set ruler                     " show cursor position
 set noerrorbells              " no bells in terminal
 set undolevels=1000           " number of undos stored
 set viminfo='50,"50           " '=marks for x files, "=registers for x files
+" }}} 
 
-
-" git blame in normal/visual mode
+" {{{ git blame in normal/visual mode
 :vmap gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
 :nmap gb :!git blame %<CR>
+" }}}
 
-set foldenable
-set foldmethod=indent
-
-
+" {{{ Functions
 function Pastebin() range
 	" pipe selection to pastebin
 	echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).'| pastebin')
@@ -159,7 +155,9 @@ function! Setup_ExecNDisplay()
   set autoread
 endfunction
 
+" }}}
 
+" {{{ Key mappings
 let mapleader=","
 silent !stty -ixon > /dev/null 2>/dev/null
 nnoremap <C-Q> :call Detatch()<cr>
@@ -183,11 +181,26 @@ vmap <Leader>s :sort<cr>
 nmap <C-S> :SyntasticToggleMode<CR>
 vnoremap < <gv
 vnoremap > >gv
+" }}}
 
+" {{{ other
 " Show red column at 80-char limit
+let g:jedi#popup_on_dot = 1
 set colorcolumn=80
 highlight ColorColumn ctermbg=blue
 set tw=80
+
+set foldenable
+set foldmethod=indent
+
+set nocompatible
+filetype off
+set t_Co=256
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
 
 if match($TERM, "screen")!=-1
   set term=xterm
@@ -206,3 +219,5 @@ highlight UnwantedTab  guibg=blue ctermbg=darkblue
 
 set rtp+=./.local/lib/python2.7/site-packages/powerline/bindings/vim
 set laststatus=2
+
+" }}}
