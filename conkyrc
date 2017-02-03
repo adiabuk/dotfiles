@@ -95,18 +95,25 @@ ${font} Up ${alignr}${upspeed wlp2s0}
 ${font}Total down ${alignr}${totaldown wlp2s0}
 ${font}Total up ${alignr}${totalup wlp2s0}
 ${color slate grey}$stippled_hr${color gray99}
-${font Open Sans:bold:size=8.5}tun0
+${if_up tun0}${font Open Sans:bold:size=8.5}tun0
 ${font} IPv4 ${alignr}${addr tun0}
 ${font} Down ${alignr}${downspeed tun0}
 ${font} Up ${alignr}${upspeed tun0}
 ${font} Total down ${alignr}${totaldown tun0}
 ${font} Total up ${alignr}${totalup tun0}
+${color slate grey}$stippled_hr${color gray99}${endif}
+${if_up ppp0}${font Open Sans:bold:size=8.5}ppp0
+${font} IPv4 ${alignr}${addr ppp0}
+${font} Down ${alignr}${downspeed ppp0}
+${font} Up ${alignr}${upspeed ppp0}
+${font} Total down ${alignr}${totaldown ppp0}
+${font} Total up ${alignr}${totalup ppp0}${endif}
 ${color slate grey}$stippled_hr${color gray99}
-${font Open Sans:bold:size=8.5}enp3s0
+${if_up enp3s0}${font Open Sans:bold:size=8.5}enp3s0
 ${font} IPv4 ${alignr}${addr enp3s0}
 ${font} Down ${alignr}${downspeed enp3s0}
 ${font} Up ${alignr}${upspeed enp3s0}
 ${font} Total down ${alignr}${totaldown enp3s0}
-${font} Total up ${alignr}${totalup enp3s0}
+${font} Total up ${alignr}${totalup enp3s0}${endif}
 ${color slate grey}$stippled_hr${color gray99}
 ${font} IPv4 (WAN) ${alignr}${execi 7200 ~/bin/publicip.sh}
