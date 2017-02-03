@@ -9,7 +9,7 @@ xscreensaver -nosplash &
 klipper &  # Needed for copying text from vim
 ksuperkey -e 'Control_L=Escape;Super_L=Alt_L|F2'  # execute fbrun
 /usr/bin/gnome-keyring-daemon --start --components=secrets &  # for nm-applet
-nm-applet &
+while true; do nm-applet; done &
 pa-applet &
 terminator &
 conky -c ~/.conkyrc -d
