@@ -11,6 +11,8 @@ ksuperkey -e 'Control_L=Escape;Super_L=Alt_L|F2'  # execute fbrun
 /usr/bin/gnome-keyring-daemon --start --components=secrets &  # for nm-applet
 while true; do nm-applet; done &
 pa-applet &
+insync start &
+dropbox &
 terminator &
 conky -c ~/.conkyrc -d
 conky -c ~/.conkycal -d
