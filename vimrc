@@ -189,6 +189,7 @@ let g:jedi#popup_on_dot = 1
 set colorcolumn=80
 highlight ColorColumn ctermbg=blue
 set tw=80
+autocmd BufRead,BufNewFile *.md setlocal spell
 
 set foldenable
 set foldmethod=indent
