@@ -1,4 +1,4 @@
-" vim: fdm=marker
+"vim: fdm=marker
 
 " {{{ Vundle
 " set the runtime path to include Vundle and initialize
@@ -193,6 +193,10 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 
 set foldenable
 set foldmethod=indent
+
+" use fdm=marker when no filetype
+filetype plugin on
+au BufNewFile,BufRead * if &ft == '' | set fdm=marker | endif
 
 set nocompatible
 filetype off
