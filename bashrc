@@ -37,7 +37,8 @@ fi
 #{{{ command completion
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && \
   source /usr/share/doc/pkgfile/command-not-found.bash
-source "$HOME"/bin/git-completion.bash # git completion
+[[ -f "$HOME"/bin/bit-completion.bash ]] && \
+  source "$HOME"/bin/git-completion.bash # git completion
 # }}}
 
 # {{{ aliases
@@ -90,14 +91,17 @@ eval "$(dircolors)" # show files and directories with std colors
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-setxkbmap -option terminate:ctrl_alt_bksp # alt+ctl+backsp to kill X11
+if [ -f /usr/bin/setxkbmap ]; then
+  setxkbmap -option terminate:ctrl_alt_bksp # alt+ctl+backsp to kill X11
+fi
 # }}}
 
 # {{{for ruby
 #export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH:$HOME/.gem/ruby/2.3.0/bin
 export PATH=$HOME/.rbenv/versions/2.1.8/bin:$PATH
-eval "$(rbenv init -)"
+if [ -f /usr/bin/rbenv ]; then
+  eval "$(rbenv init -)" &> /dev/null
+fi
 # }}}
 
 # {{{ functions
@@ -184,7 +188,7 @@ function _update_ps1() {
   PS1="$(~/powerline-shell.py --cwd-mode fancy --mode compatible --colorize-hostname --shell bash $? 2> /dev/null)"
 }
 
-if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ]; then
+if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ -L '~/powerline-shell.py' ]; then
   export TERM=xterm-256color
   PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 else

@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/env python2
 """
 Small script to symlink dotfiles from repo clone
 """
 
+from __future__ import print_function
 import calendar
 import time
 import json
@@ -16,9 +16,9 @@ CTIME = calendar.timegm(time.gmtime())
 DATA = json.loads(RAW)
 
 for key in DATA.keys():
-    source = os.path.abspath('../{}'.format(key))
-    DEST = '{}/{}'.format(HOME, DATA[key])
-    print('dest: {}'.format(DEST))
+    source = os.path.abspath('../{0}'.format(key))
+    DEST = '{0}/{1}'.format(HOME, DATA[key])
+    print('dest: {0}'.format(DEST))
     parent_dir = os.path.dirname(DEST)
     if not os.path.exists(parent_dir):
         # create full parent path to destination path
@@ -26,16 +26,16 @@ for key in DATA.keys():
         os.makedirs(parent_dir)
 
     if os.path.islink(DEST):
-        print('{} is already a link, skipping'.format(DEST))
+        print('{0} is already a link, skipping'.format(DEST))
         continue
     elif os.path.exists(DEST):
-        print('renaming to {}.{}'.format(DEST, CTIME))
-        os.rename(DEST, '{}.{}'.format(DEST, CTIME))
+        print('renaming to {0}.{1}'.format(DEST, CTIME))
+        os.rename(DEST, '{0}.{1}'.format(DEST, CTIME))
     try:
-        print("Creating symlink {}".format(key))
+        print("Creating symlink {0}".format(key))
         os.symlink(source, DEST)
     except Exception as ex:
-        print('Failed: ../{} to {}: {}'.format(source, DEST, ex))
+        print('Failed: ../{0} to {1}: {2}'.format(source, DEST, ex))
 
 print("\nSetting up vim")
 os.system('vim +VundleInstall +qa')
