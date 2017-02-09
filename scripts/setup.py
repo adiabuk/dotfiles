@@ -1,6 +1,12 @@
 #!/usr/bin/env python2
 """
 Small script to symlink dotfiles from repo clone
+Requirements:
+    setxkbmap
+    rbenv
+    git-completion
+TODO: don't use powerline, if python file unavailable
+
 """
 
 from __future__ import print_function
