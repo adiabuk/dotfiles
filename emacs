@@ -12,9 +12,9 @@
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
-(require 'powerline)
-(require 'moe-theme)
-(powerline-moe-theme)
+;(require 'powerline)
+;(require 'moe-theme)
+;(powerline-moe-theme)
 
 (global-linum-mode 1)
 
