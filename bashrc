@@ -51,6 +51,7 @@ alias grep="grep --color" # use color in grep
 alias ssh="ssh -Y" # X11 forwarding for vim yank to clipboard
 [[ $platform == "linux" ]] && alias open="xdg-open" # don"t do on mac
 alias json="python -mjson.tool" # pretty print json from stdin
+alias json2="jq"  # another json formatter
 alias xml="xmllint --format" # pretty print xml from stdin
 alias cdtmp="cd $(mktemp -d /tmp/"$USER"-XXXXXX)" # create and enter new tmp dir
 alias webserver="python2 -mSimpleHTTPServer" # start a weberver (port as arg)
@@ -61,7 +62,7 @@ alias hdmi_off="xrandr --output HDMI1 --off"
 alias sudo="sudo "
 alias pacman="pacwait"
 alias col_sum="awk '{s+=\$NF} END {print s}" # FIXME - read in arg for col num
-alias df="df -t ext4 --total"
+alias df="df -t ext3 -t ext4 --total"
 alias which="which_function"
 alias pip26="sudo python2.6 /usr/bin/pip2"
 alias per="cd ~/repos/personal"
@@ -198,3 +199,21 @@ else
 fi
 #}}}
 # }}}
+
+# {{{ pyenv
+
+if [ -d "/opt/pyenv" ]; then
+ export PYENV_ROOT="/opt/pyenv"
+ export PATH="$PYENV_ROOT/bin:$PATH"
+ eval "$(pyenv init -)"
+fi
+
+if [ -d "$HOME/.pyenv" ]; then
+ export PYENV_ROOT="$HOME/.pyenv"
+ export PATH="$PYENV_ROOT/bin:$PATH"
+ eval "$(pyenv init -)"
+fi
+
+
+export PATH
+| }}}
