@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=xscreensaver -nosplash\n
+Hidden=false
+X-MATE-Autostart-enabled=true
+Name[en_GB]=xscreensaver daemon
+Name=xscreensaver daemon
+Comment[en_GB]=
+Comment=

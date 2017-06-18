@@ -217,3 +217,5 @@ fi
 
 export PATH
 # }}}
+
+dbus-update-activation-environment --all

@@ -1,5 +1,10 @@
 ;vim:fdm=marker
 
+(custom-set-variables
+ '(org-display-custom-times t)
+ '(org-time-stamp-custom-formats (quote ("<%d/%m/%Y %a [%H:%M]>" . "<%d %m %Y  %a [%H:%M]>")))) 
+
+
 ; {{{ load stuff
 (add-to-list 'load-path "~/.emacs.d/additional")
 (load-library "termshell")
