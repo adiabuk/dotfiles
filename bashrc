@@ -147,11 +147,13 @@ function ping() {
 # {{{ llwhich
 
 function llwhich() {
-    command=$1
-    if [[ -f $1 ]]; then
-	ls -l `which $1`
+    which=$(/bin/which $1)
+    if [[ -L $which ]]; then
+      ls -l $which
+    elif [[ -f $which ]]; then
+      echo $which
     else
-	which $1
+      echo $which
     fi
 }
 # }}}
