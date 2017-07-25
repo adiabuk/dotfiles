@@ -44,6 +44,8 @@ fi
 # {{{ aliases
 alias cls='clear'
 alias vim100='vim -c "set colorcolumn=101"'
+alias xemacs='emacs-25.2 &'
+
 # use color and group dirs
 alias ls="ls --color=auto --group-directories-first --ignore=*.pyc"
 alias ll="ls -l"
@@ -139,6 +141,18 @@ function ping() {
   else
     ut /bin/ping "$@";
   fi
+}
+# }}}
+
+# {{{ llwhich
+
+function llwhich() {
+    command=$1
+    if [[ -f $1 ]]; then
+	ls -l `which $1`
+    else
+	which $1
+    fi
 }
 # }}}
 
