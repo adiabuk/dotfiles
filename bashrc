@@ -44,7 +44,7 @@ fi
 # {{{ aliases
 alias cls='clear'
 alias vim100='vim -c "set colorcolumn=101"'
-alias xemacs='emacs-25.2 &'
+alias xemacs='emacs-25.2 '
 
 # use color and group dirs
 alias ls="ls --color=auto --group-directories-first --ignore=*.pyc"

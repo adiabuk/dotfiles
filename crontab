@@ -1,0 +1,5 @@
+# minute hour day_of_month month day_of_week command
+
+@weekly ID=yaourt    yaourt -Sy
+@daily  ID=packback  ~/bin/packback.sh -g -f ~/Dropbox/packages.`date +%m-%d-%y`.txt
+
