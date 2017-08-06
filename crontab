@@ -1,4 +1,4 @@
 # minute hour day_of_month month day_of_week command
 @weekly ID=yaourt    yaourt -Sy
 @weekly ID=pkgfile   sudo pkgfile --update
-@daily  ID=packback  ~/bin/packback.sh -g -f ~/Dropbox/packages.`date +%m-%d-%y`.txt
+@daily  ID=packback  ~/bin/packback.sh -g -f ~/Dropbox/packages-`hostname`.`date +%m-%d-%y`.txt

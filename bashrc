@@ -45,6 +45,8 @@ fi
 alias cls='clear'
 alias vim100='vim -c "set colorcolumn=101"'
 alias xemacs='emacs-25.2 '
+alias lists='xemacs ~/repos/personal/org-mode/remember.org ~/repos/personal/org-mode/todo.org &'
+alias progress="watch -n1 '~/repos/personal/org-mode/progress.sh'"
 
 # use color and group dirs
 alias ls="ls --color=auto --group-directories-first --ignore=*.pyc"
