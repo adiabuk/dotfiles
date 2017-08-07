@@ -111,6 +111,21 @@ fi
 
 # {{{ functions
 
+# {{{ remove_symlink
+
+function remove_symlink(){
+  # Turn link into a file
+  if [[ -z $1 ]]; then
+    echo "specifify symlink to turn into file"
+  elif [[ ! -h $1 ]] || [[ ! -a $1 ]]; then
+    echo "$1 is not a valid symlink"
+  else
+    cp --remove-destination `readlink $1` $1
+  fi
+}
+
+# }}}
+
 # {{{ 'which' function
 function which_function(){
   # use with alias of which to also resolve functions
