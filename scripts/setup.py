@@ -14,6 +14,7 @@ import calendar
 import time
 import json
 import os
+import sys
 
 REAL_PATH = os.path.dirname(os.path.realpath(__file__))
 HOME = os.getenv('HOME')
@@ -26,6 +27,9 @@ for key in DATA.keys():
     DEST = '{0}/{1}'.format(HOME, DATA[key])
     print('dest: {0}'.format(DEST))
     parent_dir = os.path.dirname(DEST)
+    if not os.path.exists(source):
+        print('Unable to find {0}. Exiting'.format(source))
+        sys.exit(1)
     if not os.path.exists(parent_dir):
         # create full parent path to destination path
         # if it doesn't already exist
@@ -47,5 +51,6 @@ print("\nSetting up vim")
 os.system('vim +VundleInstall +qa')
 os.system('pip install --user git+git://github.com/Lokaltog/powerline --upgrade')
 print("\nSetting up user crontab")
-os.system('crontab ./crontab')
+cron_source = os.path.abspath('../crontab')
+os.system('crontab {0}'.format(cron_source))
 print('\nDONE')

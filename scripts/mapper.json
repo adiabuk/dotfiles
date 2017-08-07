@@ -12,7 +12,6 @@
     "git-completion.bash": "git-completion.bash",
     "profile": ".profile",
     "git-aliases": ".git-aliases",
-    "gitconfig": ".gitconfig",
     "inputrc": ".inputrc",
     "conkyrc": ".conkyrc",
     "ideskrc": ".ideskrc",
