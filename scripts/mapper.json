@@ -14,11 +14,15 @@
     "git-aliases": ".git-aliases",
     "inputrc": ".inputrc",
     "conkyrc": ".conkyrc",
+    "conkycal": ".conkycal",
+    "conkyprogA": ".conkyprogA",
+    "conkyprogB": ".conkyprogB",
+    "conkyprogC": ".conkyprogC",
+    "conkyprogT": ".conkyprogT",
     "ideskrc": ".ideskrc",
     "idesktop": ".idesktop",
     "fluxbox": ".fluxbox",
     "xinitrc": ".xinitrc",
-    "conkycal": ".conkycal",
     "autostart": ".config/autostart",
     "terminator-config": ".config/terminator/config"
 }
