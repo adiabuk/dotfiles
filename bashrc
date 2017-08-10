@@ -254,7 +254,7 @@ function _update_ps1() {
   PS1="$(~/powerline-shell.py --cwd-mode fancy --mode compatible --colorize-hostname --shell bash $? 2> /dev/null)"
 }
 
-if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ -L '~/powerline-shell.py' ]; then
+if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ -L "$HOME/powerline-shell.py" ]; then
   export TERM=xterm-256color
   PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 else
