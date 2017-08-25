@@ -2,7 +2,7 @@ background no
 use_xft yes
 xftfont 123:size=9
 xftalpha 0.9
-update_interval 1
+update_interval 2
 total_run_times 0
 own_window yes
 own_window_title conky

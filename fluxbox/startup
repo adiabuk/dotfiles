@@ -16,6 +16,10 @@ dropbox &
 terminator &
 conky -c ~/.conkyrc -d
 conky -c ~/.conkycal -d
+conky -c ~/.conkyprogA -d
+conky -c ~/.conkyprogB -d
+conky -c ~/.conkyprogC -d
+conky -c ~/.conkyprogT -d
 idesk &  # desktop icons
 fbset "$HOME"/.idesktop/images.70.jpg &
 exec fluxbox -log "/home/amro/.fluxbox/log"
