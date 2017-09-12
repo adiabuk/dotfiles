@@ -50,6 +50,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_sh_shellcheck_args = ['-x']
+let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = ['perl']
 let g:syntastic_cgi_checkers = ['perl']
 let g:syntastic_javascript_checkers = ['jslint']
@@ -60,7 +61,7 @@ let g:syntastic_enable_perl_checker = 1
 
 " {{{ More vundle
 set nocompatible
-filetype off
+"filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -190,16 +191,17 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=blue
 set tw=80
 autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufWritePre * %s/\s\+$//e
 
 set foldenable
-set foldmethod=indent
+set fdm=indent
 
 " use fdm=marker when no filetype
 filetype plugin on
 au BufNewFile,BufRead * if &ft == '' | set fdm=marker | endif
 
 set nocompatible
-filetype off
+"filetype off
 set t_Co=256
 
 set tabstop=2
