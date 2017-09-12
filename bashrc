@@ -40,11 +40,14 @@ fi
 # }}}
 
 # {{{ aliases
+alias dmesg='dmesg -T'
+alias lesspipe='lesspipe.sh'
 alias cls='clear'
 alias vim100='vim -c "set colorcolumn=101"'
 alias xemacs='emacs-25.2 '
 alias lists='xemacs ~/repos/personal/org-mode/remember.org ~/repos/personal/org-mode/todo.org &'
 alias progress="watch -n1 '~/repos/personal/org-mode/progress.sh'"
+alias epoch="date +%s"
 
 # use color and group dirs
 alias ls="ls --color=auto --group-directories-first --ignore=*.pyc"
@@ -64,7 +67,7 @@ alias hdmi_off="xrandr --output HDMI1 --off"
 alias sudo="sudo "
 alias pacman="pacwait"
 alias col_sum="awk '{s+=\$NF} END {print s}" # FIXME - read in arg for col num
-alias df="df -t ext3 -t ext4 --total"
+alias df="df -Tt ext3 -t ext4 --total"
 alias which="which_function"
 alias pip26="sudo python2.6 /usr/bin/pip2"
 alias per="cd ~/repos/personal"
@@ -72,6 +75,7 @@ alias eq="cd ~/repos/equinix"
 alias less="less -R"  # parse control characters
 alias f5vpn-login="ut f5vpn-login"
 alias tidy="tidy -config ~/tidy_config.txt"
+alias kvm="qemu-system-x86_64 --enable-kvm"
 # }}}
 
 # {{{ bash history
@@ -131,7 +135,8 @@ command_not_found_handle ()
         return 0;
     fi
     aur_pkgs=$(aur_hook.py $cmd);
-    if  (( ${#aur_pkgs[*]} )); then
+    exit_code=$?
+    if  (( ${#aur_pkgs[*]} )) && (( $exit_code == 0 )); then
       printf '%s might be found in the following AUR packages:\n' "$cmd";
       printf '  %s\n' "${aur_pkgs[@]}";
       return 0;
@@ -200,7 +205,7 @@ function llwhich() {
     if [[ -L $which ]]; then
       ls -l $which
     elif [[ -f $which ]]; then
-      echo $which
+      ls -l $which
     else
       echo $which
     fi
