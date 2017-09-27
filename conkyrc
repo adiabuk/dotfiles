@@ -37,6 +37,7 @@ TEXT
 ${font Open Sans:Bold:size=10}${color tan1}SYSTEM ${color slate grey}${hr 2}$color${font}
 $sysname $kernel $alignr $machine
 Uptime $alignr $uptime
+Packages $alignr ${execi 500 echo "$(/usr/bin/pacman -Qq --color never | wc -l)"}
 Date $alignr ${time %A %d %B %Y}
 Time $alignr ${color red}${time %H:%M:%S %Z}$color
 Hostname $alignr $nodename
