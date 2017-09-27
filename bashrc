@@ -67,7 +67,7 @@ alias hdmi_off="xrandr --output HDMI1 --off"
 alias sudo="sudo "
 alias pacman="pacwait"
 alias col_sum="awk '{s+=\$NF} END {print s}" # FIXME - read in arg for col num
-alias df="df -Tt ext3 -t ext4 --total"
+alias df="df --total -x tmpfs -x dev"
 alias which="which_function"
 alias pip26="sudo python2.6 /usr/bin/pip2"
 alias per="cd ~/repos/personal"
@@ -188,7 +188,7 @@ function ut() {
 # }}}
 
 # {{{ retry ping if failed
-function ping() { 
+function ping() {
   # Retry ping if failed
   if [[ -z $1 ]]; then
     /bin/ping;
@@ -234,7 +234,7 @@ function volume() {
 }
 # }}}
 
-# {{{ coundown function 
+# {{{ coundown function
 function countdown() {
   # countdown number of seconds
 
