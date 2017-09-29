@@ -24,5 +24,6 @@
     "fluxbox": ".fluxbox",
     "xinitrc": ".xinitrc",
     "autostart": ".config/autostart",
-    "terminator-config": ".config/terminator/config"
+    "terminator-config": ".config/terminator/config",
+    "mimeapps.list": ".config/mimeapps.list"
 }

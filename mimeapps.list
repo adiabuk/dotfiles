@@ -1,0 +1,16 @@
+[Added Associations]
+application/pdf=atril.desktop;evince.desktop;
+application/x-xpinstall=firefox.desktop;
+image/jpeg=eog.desktop;eom.desktop;gimp.desktop;
+image/png=eog.desktop;gimp.desktop;
+image/svg+xml=gimp.desktop;inkscape.desktop;eog.desktop;eom.desktop;libreoffice-writer.desktop;chromium.desktop;firefox.desktop;google-chrome-beta.desktop;bluefish.desktop;org.gnome.Builder.desktop;org.gnome.Epiphany.desktop;abiword.desktop;gvim.desktop;atom.desktop;emacs.desktop;org.gnome.gedit.desktop;GitKraken.desktop;
+message/rfc822=userapp-Thunderbird-F2A7LY.desktop;
+video/mp4=vlc.desktop;
+video/x-msvideo=vlc.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-F2A7LY.desktop;
+
+[Default Applications]
+image/jpeg=eog.desktop;
+image/svg+xml=gimp.desktop;
+message/rfc822=userapp-Thunderbird-F2A7LY.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-F2A7LY.desktop
