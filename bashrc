@@ -38,13 +38,14 @@ fi
 [[ -f "$HOME"/bin/git-completion.bash ]] && \
   source "$HOME"/bin/git-completion.bash # git completion
 # }}}
+source /home/amro/.bash_completion.d/python-argcomplete.sh
 
 # {{{ aliases
 alias dmesg='dmesg -T'
 alias lesspipe='lesspipe.sh'
 alias cls='clear'
 alias vim100='vim -c "set colorcolumn=101"'
-alias xemacs='emacs-25.2 '
+alias xemacs='emacs-25.3 '
 alias lists='xemacs ~/repos/personal/org-mode/remember.org ~/repos/personal/org-mode/todo.org &'
 alias progress="watch -n1 '~/repos/personal/org-mode/progress.sh'"
 alias epoch="date +%s"
