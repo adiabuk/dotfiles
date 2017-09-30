@@ -25,5 +25,7 @@
     "xinitrc": ".xinitrc",
     "autostart": ".config/autostart",
     "terminator-config": ".config/terminator/config",
-    "mimeapps.list": ".config/mimeapps.list"
+    "mimeapps.list": ".config/mimeapps.list",
+    "user": ".config/dconfig/user",
+    "retroarch.cfg": ".config/retroarch/retroarch.cfg"
 }
