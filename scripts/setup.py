@@ -53,4 +53,8 @@ os.system('pip install --user git+git://github.com/Lokaltog/powerline --upgrade'
 print("\nSetting up user crontab")
 cron_source = os.path.abspath('../crontab')
 os.system('crontab {0}'.format(cron_source))
+print("\nInstalling argcomplete")
+os.system('mkdir ~/.bash_completion.d')
+os.system('activate-global-python2-argcomplete --dest ~/.bash_completion.d/')
 print('\nDONE')
+
