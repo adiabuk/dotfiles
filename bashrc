@@ -37,8 +37,8 @@ fi
 #{{{ command completion
 [[ -f "$HOME"/bin/git-completion.bash ]] && \
   source "$HOME"/bin/git-completion.bash # git completion
-# }}}
 source /home/amro/.bash_completion.d/python-argcomplete.sh
+# }}}
 
 # {{{ aliases
 alias dmesg='dmesg -T'
@@ -102,6 +102,7 @@ fi
 if [ -f /usr/bin/setxkbmap ]; then
   setxkbmap -option terminate:ctrl_alt_bksp # alt+ctl+backsp to kill X11
 fi
+dbus-update-activation-environment --all
 # }}}
 
 # {{{for ruby
@@ -257,7 +258,7 @@ function wt() {
 function _update_ps1() {
   ## Powerline Shell
   ## https://github.com/milkbikis/powerline-shell
-  PS1="$(~/powerline-shell.py --cwd-mode fancy --mode compatible --colorize-hostname --shell bash $? 2> /dev/null)"
+  PS1="$(~/powerline-shell.py --cwd-mode fancy --mode compatible --shell bash $? 2> /dev/null)"
 }
 
 if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ -L "$HOME/powerline-shell.py" ]; then
@@ -271,4 +272,3 @@ fi
 #}}}
 # }}}
 
-dbus-update-activation-environment --all
