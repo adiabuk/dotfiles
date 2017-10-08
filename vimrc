@@ -120,7 +120,7 @@ set ruler                     " show cursor position
 set noerrorbells              " no bells in terminal
 set undolevels=1000           " number of undos stored
 set viminfo='50,"50           " '=marks for x files, "=registers for x files
-" }}} 
+" }}}
 
 " {{{ git blame in normal/visual mode
 :vmap gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
@@ -191,6 +191,7 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=blue
 set tw=80
 autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd FileType markdown setlocal spell
 autocmd BufWritePre * %s/\s\+$//e
 
 set foldenable
