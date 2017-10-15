@@ -185,11 +185,11 @@ vnoremap > >gv
 " }}}
 
 " {{{ other
-" Show red column at 80-char limit
+" Show red column at 100-char limit
 let g:jedi#popup_on_dot = 1
-set colorcolumn=80
+set colorcolumn=100
 highlight ColorColumn ctermbg=blue
-set tw=80
+set tw=100
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd FileType markdown setlocal spell
 autocmd BufWritePre * %s/\s\+$//e
