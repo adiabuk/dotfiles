@@ -182,6 +182,10 @@ vmap <Leader>s :sort<cr>
 nmap <C-S> :SyntasticToggleMode<CR>
 vnoremap < <gv
 vnoremap > >gv
+map <ESC>[5A <C-Up>
+map <ESC>[5B <C-Down>
+nnoremap <C-Up> :m .-2<CR>==
+nnoremap <C-Down> :m .+1<CR>==
 " }}}
 
 " {{{ other
