@@ -23,7 +23,7 @@ CTIME = calendar.timegm(time.gmtime())
 DATA = json.loads(RAW)
 
 for key in DATA.keys():
-    source = os.path.abspath('../{0}'.format(key))
+    source = os.path.abspath('config/{0}'.format(key))
     DEST = '{0}/{1}'.format(HOME, DATA[key])
     print('dest: {0}'.format(DEST))
     parent_dir = os.path.dirname(DEST)
