@@ -4,9 +4,11 @@ the buffers you left open before you switched (unless you closed it).
 It doesn't require any setup at all more than:
 (0blayout-mode)
 
-When you start emacs with 0blayout loaded, you will have a default layout
-named "default", and then you can create new layouts (C-c C-l C-c), switch
-layouts (C-c C-l C-b), and kill the current layout (C-c C-l C-k).
+When you start Emacs with 0blayout loaded, you will have a default layout
+named "default", and then you can create new layouts (<prefix> C-c), switch
+layouts (<prefix> C-b), and kill the current layout (<prefix> C-k).
+The default <prefix> is (C-c C-l), but you can change it using:
+(0blayout-add-keybindings-with-prefix "<your prefix>")
 
 You can also customize-variable to change the name of the default session.
 

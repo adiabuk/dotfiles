@@ -50,11 +50,16 @@ for key in DATA.keys():
 print("\nSetting up vim")
 os.system('vim +VundleInstall +qa')
 os.system('pip install --user git+git://github.com/Lokaltog/powerline --upgrade')
+print("\nSetting up org-protocol")
+os.system('update-desktop-database ~/.local/share/applications/')
+print("\nAdd the following as a bookmark in firefox")
+print("\njavascript:location.href='org-protocol://capture://l/'+encodeURIComponent(location.href)+'/'+encodeURIComponent(document.title)+'/'+encodeURIComponent(window.getSelection())")
+
+
 print("\nSetting up user crontab")
-cron_source = os.path.abspath('../crontab')
-os.system('crontab {0}'.format(cron_source))
+CRON_SOURCE = os.path.abspath('../crontab')
+os.system('crontab {0}'.format(CRON_SOURCE))
 print("\nInstalling argcomplete")
 os.system('mkdir ~/.bash_completion.d')
 os.system('activate-global-python2-argcomplete --dest ~/.bash_completion.d/')
 print('\nDONE')
-

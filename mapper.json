@@ -27,5 +27,6 @@
     "terminator-config": ".config/terminator/config",
     "mimeapps.list": ".config/mimeapps.list",
     "user": ".config/dconfig/user",
-    "retroarch.cfg": ".config/retroarch/retroarch.cfg"
+    "retroarch.cfg": ".config/retroarch/retroarch.cfg",
+    "org-protocol.desktop":".local/share/applications/org-protocol.desktop"
 }

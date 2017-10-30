@@ -41,6 +41,7 @@ source /home/amro/.bash_completion.d/python-argcomplete.sh
 # }}}
 
 # {{{ aliases
+alias mv='mv -i'
 alias dmesg='dmesg -T'
 alias lesspipe='lesspipe.sh'
 alias cls='clear'

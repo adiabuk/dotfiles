@@ -2,8 +2,8 @@
 
 (custom-set-variables
  '(org-display-custom-times t)
- '(org-time-stamp-custom-formats (quote ("<%d/%m/%Y %a [%H:%M]>" . "<%d %m %Y  %a [%H:%M]>")))) 
-
+ '(org-time-stamp-custom-formats (quote ("<%d/%m/%Y %a [%H:%M]>" . "<%d %m %Y  %a [%H:%M]>"))))
+(require 'org-protocol)
 
 ; {{{ load stuff
 (add-to-list 'load-path "~/.emacs.d/additional")
@@ -16,6 +16,16 @@
 (global-set-key (kbd "C-x t") 'term/shell)
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
+(server-start)
+(require 'org-protocol)
+(setq org-protocol-default-template-key "l")
+(setq org-capture-templates
+ '(("t" "Todo" entry (file+headline "~/repos/personal/org-mode/remember.org" "Tasks")
+        "* TODO %?\n  %i\n  %a")
+   ("l" "Link" entry (file+olp "~/repos/personal/org-mode/remember.org" "Bookmarks")
+        "* %a\n %?\n %i")
+   ("j" "Journal" entry (file+datetree "~/repos/personal/org-mode/remember.org")
+        "* %?\nEntered on %U\n  %i\n  %a")))
 
 ;(require 'powerline)
 ;(require 'moe-theme)
@@ -83,7 +93,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Custom splitting functions ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- 
+
 (defun vsplit-last-buffer ()
   (interactive)
   (split-window-vertically)
@@ -96,7 +106,7 @@
   (other-window 1 nil)
   (switch-to-next-buffer)
   )
- 
+
 (global-set-key (kbd "C-x 2") 'vsplit-last-buffer)
 (global-set-key (kbd "C-x 3") 'hsplit-last-buffer)
 ; }}}
