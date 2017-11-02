@@ -57,7 +57,7 @@ print("\njavascript:location.href='org-protocol://capture://l/'+encodeURICompone
 
 
 print("\nSetting up user crontab")
-CRON_SOURCE = os.path.abspath('../crontab')
+CRON_SOURCE = os.path.abspath('config/crontab')
 os.system('crontab {0}'.format(CRON_SOURCE))
 print("\nInstalling argcomplete")
 os.system('mkdir ~/.bash_completion.d')
