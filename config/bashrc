@@ -114,6 +114,23 @@ if [ -f /usr/bin/rbenv ]; then
 fi
 # }}}
 
+# {{{ Pyenv
+
+
+if [ -d "/opt/pyenv" ]; then
+ export PYENV_ROOT="/opt/pyenv"
+ export PATH="$PYENV_ROOT/bin:$PATH"
+ eval "$(pyenv init -)"
+fi
+
+if [ -d "$HOME/.pyenv" ]; then
+ export PYENV_ROOT="$HOME/.pyenv"
+ export PATH="$PYENV_ROOT/bin:$PATH"
+ eval "$(pyenv init -)"
+fi
+
+#}}}
+
 # {{{ functions
 
 # {{{ command-not-found override function
@@ -272,4 +289,3 @@ else
 fi
 #}}}
 # }}}
-
