@@ -3,3 +3,4 @@
 @daily       ID=pkgfile   sudo pkgfile --update
 00 01 * * *  ID=packback  ~/bin/packback.sh -g -f ~/Dropbox/packages/`hostname`.`date +%m-%d-%y`.txt
 00 02 * * *  ID=nodeppack ~/bin/no_dep.sh ~/Dropbox/packages/`hostname`.`date +%m-%d-%y`.txt ~/Dropbox/packages/nodeppackages-`hostname`.`date +%m-%d-%y`.txt
+00 03 * * *  ID=pip version=$(python --version 2>&1|awk {'print $NF'}) pip freeze > ~/Dropbox/pip/`hostname`.`date +%m-%d-%y`_"${version}".txt
