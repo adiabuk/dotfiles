@@ -1,7 +1,7 @@
 table Icon
   Caption: vim
   Command: gvim
-  Icon: /home/amro/.idesktop/images/vim.png
+  Icon: $HOME/.idesktop/images/vim.png
   Width: 61
   Height: 48
   X: 119

@@ -1,7 +1,7 @@
 table Icon
   Caption: Thunderbird
   Command: thunderbird
-  Icon: /home/amro/.idesktop/images/thunderbird.png
+  Icon: $HOME/.idesktop/images/thunderbird.png
   Width: 48
   Height: 48
   X: 29

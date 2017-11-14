@@ -1,7 +1,7 @@
 table Icon
   Caption: Firefox
   Command: firefox
-  Icon: /home/amro/.idesktop/images/firefox.png
+  Icon: $HOME/.idesktop/images/firefox.png
   Width: 48
   Height: 48
   X: 209

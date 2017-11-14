@@ -2,7 +2,7 @@
 
 [Desktop Entry]
 Type=Application
-Exec=conky -c /home/amro/.conkyprogB
+Exec=sh -c 'conky -c $HOME/.conkyprogB'
 Icon=conky
 Terminal=false
 

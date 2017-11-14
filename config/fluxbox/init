@@ -44,7 +44,7 @@ session.screen0.windowPlacement:	RowMinOverlapPlacement
 session.screen0.workspacewarping:	true
 session.screen0.fullMaximization:	false
 session.screen0.rowPlacementDirection:	LeftToRight
-session.screen0.windowMenu:	/home/amro/.fluxbox/windowmenu
+session.screen0.windowMenu:	$HOME/.fluxbox/windowmenu
 session.screen0.autoRaise:	true
 session.screen0.workspaces:	4
 session.screen0.focusNewWindows:	true
@@ -60,12 +60,12 @@ session.screen0.menuDelay:	200
 session.cacheMax:	200
 session.ignoreBorder:	false
 session.configVersion:	13
-session.slitlistFile:	/home/amro/.fluxbox/slitlist
+session.slitlistFile:	$HOME/.fluxbox/slitlist
 session.styleFile:	/usr/share/fluxbox/styles/BlueNight
 session.keyFile:	~/.fluxbox/keys
 session.autoRaiseDelay:	250
 session.cacheLife:	5
-session.appsFile:	/home/amro/.fluxbox/apps
+session.appsFile:	$HOME/.fluxbox/apps
 session.forcePseudoTransparency:	false
 session.menuSearch:	itemstart
 session.tabPadding:	0
@@ -73,4 +73,4 @@ session.menuFile:	~/.fluxbox/menu
 session.colorsPerChannel:	4
 session.doubleClickInterval:	250
 session.tabsAttachArea:	Window
-session.styleOverlay:	/home/amro/.fluxbox/overlay
+session.styleOverlay:	$HOME/.fluxbox/overlay
