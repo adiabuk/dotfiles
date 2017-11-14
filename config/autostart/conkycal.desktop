@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=conky -c /home/amro/.conkycal
+Exec=sh -c 'conky -c $HOME/.conkycal'
 Icon=conky
 Terminal=false
 Name=ConkyCal

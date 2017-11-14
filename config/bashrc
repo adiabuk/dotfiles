@@ -37,7 +37,7 @@ fi
 #{{{ command completion
 [[ -f "$HOME"/bin/git-completion.bash ]] && \
   source "$HOME"/bin/git-completion.bash # git completion
-source /home/amro/.bash_completion.d/python-argcomplete.sh
+source "$HOME"/.bash_completion.d/python-argcomplete.sh
 # }}}
 
 # {{{ aliases

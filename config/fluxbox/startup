@@ -22,5 +22,5 @@ conky -c ~/.conkyprogC -d
 conky -c ~/.conkyprogT -d
 idesk &  # desktop icons
 fbset "$HOME"/.idesktop/images.70.jpg &
-exec fluxbox -log "/home/amro/.fluxbox/log"
+exec fluxbox -log "$HOME/.fluxbox/log"
 

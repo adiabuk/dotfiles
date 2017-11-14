@@ -11,7 +11,7 @@
 # MY_BROWSER=mozilla
 
 # Name of the outputfile
-# MENUFILENAME=/home/amro/.fluxbox/menu
+# MENUFILENAME=$HOME/.fluxbox/menu
 
 # MENUTITLE=`fluxbox -version|cut -d " " -f-2`
 
@@ -41,7 +41,7 @@
 
 
 # Separate the list of background dirs with colons ':'
-# BACKGROUND_DIRS="/home/amro/.fluxbox/backgrounds/:@PREFIX@/share/fluxbox/backgrounds/:/usr/share/wallpapers"
+# BACKGROUND_DIRS="$HOME/.fluxbox/backgrounds/:@PREFIX@/share/fluxbox/backgrounds/:/usr/share/wallpapers"
 
 
 # --- Boolean variables.

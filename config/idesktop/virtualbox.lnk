@@ -1,7 +1,7 @@
 table Icon
   Caption: Virtualbox
   Command: virtualbox
-  Icon: /home/amro/.idesktop/images/virtualbox.png
+  Icon: $HOME/.idesktop/images/virtualbox.png
   Width: 48
   Height: 48
   X: 209
