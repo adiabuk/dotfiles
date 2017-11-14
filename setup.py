@@ -49,6 +49,8 @@ for key in DATA.keys():
 
 print("\nSetting up vim")
 os.system('vim +VundleInstall +qa')
+print("\nSetting up emacs")
+os.system('emacs --script {0}/.emacs.d/setup.el'.format(HOME))
 os.system('pip install --user git+git://github.com/Lokaltog/powerline --upgrade')
 print("\nSetting up org-protocol")
 os.system('update-desktop-database ~/.local/share/applications/')
