@@ -8,6 +8,7 @@
     "zshrc": ".zshrc",
     "xfce4": ".config/xfce4",
     "bashrc": ".bashrc",
+    "bashrc_real": ".bashrc_real",
     "xprofile": ".xprofile",
     "git-completion.bash": "git-completion.bash",
     "profile": ".profile",
