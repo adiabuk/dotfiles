@@ -2,7 +2,8 @@
 # vim: fdm=marker
 # shellcheck disable=SC1091,SC1090
 
-if [[ $SSH_TTY ]]; then
+# So that scp doesn't break
+if [[ "$TERM" != "dumb" ]]; then
   source ~/.bashrc_real
 fi
 
