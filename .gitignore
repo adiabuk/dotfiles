@@ -13,3 +13,5 @@ config/fluxbox/fbrun_history
 config/fluxbox/log
 config/fluxbox/lastwallpaper
 .*#
+config/emacs.d/elpa/*
+!config/emacs.d/archive
