@@ -116,7 +116,8 @@ fi
 # }}}
 
 # {{{ Pyenv
-
+export ConEmuDefaultCp=65001
+export PYTHONIOENCODING=utf-8
 if [ -d "$HOME/.pyenv" ]; then
  export PYENV_ROOT="$HOME/.pyenv"
  PYENV_BIN="${PYENV_ROOT}/versions/$(pyenv version-name)/bin/"
