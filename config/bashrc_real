@@ -119,7 +119,8 @@ fi
 
 if [ -d "$HOME/.pyenv" ]; then
  export PYENV_ROOT="$HOME/.pyenv"
- export PATH="$PYENV_ROOT/bin:$PATH"
+ PYENV_BIN="${PYENV_ROOT}/versions/$(pyenv version-name)/bin/"
+ export PATH="$PYENV_BIN:$PATH"
  eval "$(pyenv init -)"
 fi
 
