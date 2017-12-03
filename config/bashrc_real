@@ -8,6 +8,7 @@ if [[ "$unamestr" == 'Linux' ]]; then
   platform='linux'
 elif [[ "$unamestr" == 'Darwin' ]]; then
   platform='mac'
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 else
   platform='unknown'
 fi
@@ -119,9 +120,9 @@ fi
 
 if [ -d "$HOME/.pyenv" ]; then
  export PYENV_ROOT="$HOME/.pyenv"
- PYENV_BIN="${PYENV_ROOT}/versions/$($PYENV_ROOT/bin/pyenv version-name)/bin/"
+ PYENV_BIN="${PYENV_ROOT}/versions/$(/usr/local/bin/pyenv version-name)/bin/"
  export PATH="$PYENV_BIN:$PYENV_ROOT/bin:$PATH"
- eval "$($PYENV_ROOT/bin/pyenv init -)"
+ eval "$(pyenv init -)"
 fi
 
 #}}}
@@ -273,7 +274,7 @@ function _update_ps1() {
   ## https://github.com/milkbikis/powerline-shell
   PS1="$(~/powerline-shell.py --cwd-mode fancy --mode compatible --shell bash $? 2> /dev/null)"
 }
-
+echo $TERM
 if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ -L "$HOME/powerline-shell.py" ]; then
   export TERM=xterm-256color
   PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"

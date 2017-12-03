@@ -88,7 +88,7 @@
 ; {{{ color column
 ;(require 'column-marker)
 ;; (require 'fill-column-indicator)
-(add-hook 'after-change-major-mode-hook 'fci-mode)
+;;(add-hook 'after-change-major-mode-hook 'fci-mode)
 ; }}}
 
 ; {{{ Custom splitting functions

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 """
 Small script to symlink dotfiles from repo clone
 Requirements:

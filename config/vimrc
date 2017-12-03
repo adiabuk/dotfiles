@@ -66,6 +66,7 @@ set nocompatible
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Plugin 'jceb/vim-orgmode'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
