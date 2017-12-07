@@ -16,6 +16,11 @@ import json
 import os
 import sys
 
+try:
+    FORCE = True if sys.argv[1] == '-f' or sys.argv[1] == '--force' else False
+except IndexError:
+    FORCE = False
+
 REAL_PATH = os.path.dirname(os.path.realpath(__file__))
 HOME = os.getenv('HOME')
 RAW = open(REAL_PATH + '/mapper.json', 'r').read()
@@ -35,7 +40,7 @@ for key in DATA.keys():
         # if it doesn't already exist
         os.makedirs(parent_dir)
 
-    if os.path.islink(DEST):
+    if os.path.islink(DEST) and FORCE is False:
         print('{0} is already a link, skipping'.format(DEST))
         continue
     elif os.path.exists(DEST):
@@ -44,8 +49,12 @@ for key in DATA.keys():
     try:
         print("Creating symlink {0}".format(key))
         os.symlink(source, DEST)
+    except FileExistsError:
+        os.rename(DEST, '{0}.{1}'.format(DEST, CTIME))
+        os.symlink(source, DEST)
     except Exception as ex:
         print('Failed: ../{0} to {1}: {2}'.format(source, DEST, ex))
+        raise
 
 print("\nSetting up vim")
 os.system('vim +VundleInstall +qa')
