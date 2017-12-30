@@ -131,6 +131,17 @@ fi
 
 # {{{ functions
 
+# {{{ render markdown as html
+
+function markdown(){
+
+pandoc -t html $1 | lynx -stdin
+}
+
+
+# }}}
+
+
 # {{{ make and cd into tmp directory
 function cdtmp(){
 cd $(mktemp -d /tmp/"$USER"-XXXXXX) # create and enter new tmp dir
