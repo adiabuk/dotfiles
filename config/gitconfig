@@ -1,8 +1,8 @@
 [include]
 path = .git-aliases
 [user]
-  email = adiab@hotmail.co.uk
-  name = Amro Diab
+	email = adiab@hotmail.co.uk
+	name = Amro Diab
 
 [color]
   ui = off
@@ -14,3 +14,11 @@ path = .git-aliases
 	prompt = false
 [alias]
 	vimdiff = difftool
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+  clean = git-lfs clean -- %f
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/

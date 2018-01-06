@@ -42,7 +42,7 @@ endfunction
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
+let g:go_version_warning = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -65,11 +65,13 @@ set nocompatible
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
+Plugin 'Blackrush/vim-gocode'
+Plugin 'jceb/vim-orgmode'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-powerline'
+Plugin 'fatih/vim-go'
 syntax enable
 filetype plugin indent on
 " }}}
