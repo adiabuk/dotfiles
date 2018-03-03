@@ -28,7 +28,7 @@ if [[ $platform == 'mac' ]]; then
   alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw';
 else
   # only alias if gvim exists
-  [[ -f $(which gvim 2>/dev/null) ]] && alias vim='gvim -v'
+  [[ $(which gvim 2>/dev/null) ]] && alias vim='gvim -vn'
   alias emacs='emacs -nw'
 
 fi
@@ -75,7 +75,7 @@ alias df="df --total -x tmpfs -x dev"
 alias which="which_function"
 alias pip26="sudo python2.6 /usr/bin/pip2"
 alias per="cd ~/repos/personal"
-alias sky="cd ~/repos/sky"
+alias tr="cd ~/repos/tr"
 alias less="less -R"  # parse control characters
 alias f5vpn-login="ut f5vpn-login"
 alias tidy="tidy -config ~/tidy_config.txt"
