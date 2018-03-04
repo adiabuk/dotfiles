@@ -291,9 +291,10 @@ function wt() {
 function _update_ps1() {
   ## Powerline Shell
   ## https://github.com/milkbikis/powerline-shell
-  PS1="$(~/powerline-shell.py --cwd-mode fancy --mode compatible --shell bash $? 2> /dev/null)"
+  #PS1="$(powerline-shell --cwd-mode fancy --mode compatible --shell bash $? 2> /dev/null)"
+  PS1="$(powerline-shell)"
 }
-if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ -L "$HOME/powerline-shell.py" ]; then
+if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [[ $(type powerline-shell 2>/dev/null) ]]; then
   export TERM=xterm-256color
   PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 else
