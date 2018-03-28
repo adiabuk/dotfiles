@@ -28,7 +28,7 @@ if [[ $platform == 'mac' ]]; then
   alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw';
 else
   # only alias if gvim exists
-  [[ -f $(which gvim 2>/dev/null) ]] && alias vim='gvim -v'
+  [[ $(which gvim 2>/dev/null) ]] && alias vim='gvim -vn'
   alias emacs='emacs -nw'
 
 fi
@@ -75,7 +75,7 @@ alias df="df --total -x tmpfs -x dev"
 alias which="which_function"
 alias pip26="sudo python2.6 /usr/bin/pip2"
 alias per="cd ~/repos/personal"
-alias sky="cd ~/repos/sky"
+alias tr="cd ~/repos/tr"
 alias less="less -R"  # parse control characters
 alias f5vpn-login="ut f5vpn-login"
 alias tidy="tidy -config ~/tidy_config.txt"
@@ -292,9 +292,10 @@ function wt() {
 function _update_ps1() {
   ## Powerline Shell
   ## https://github.com/milkbikis/powerline-shell
-  PS1="$(~/powerline-shell.py --cwd-mode fancy --mode compatible --shell bash $? 2> /dev/null)"
+  #PS1="$(powerline-shell --cwd-mode fancy --mode compatible --shell bash $? 2> /dev/null)"
+  PS1="$(powerline-shell)"
 }
-if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ -L "$HOME/powerline-shell.py" ]; then
+if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [[ $(type powerline-shell 2>/dev/null) ]]; then
   export TERM=xterm-256color
   PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 else

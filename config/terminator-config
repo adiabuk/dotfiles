@@ -24,7 +24,9 @@
 [profiles]
   [[default]]
     background_color = "#002b36"
-    background_darkness = 0.8
+    background_darkness = 0.9
+    background_type = transparent
     cursor_color = "#aaaaaa"
     foreground_color = "#839496"
     scrollback_infinite = True
+    use_theme_colors = True
