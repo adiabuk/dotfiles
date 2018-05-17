@@ -6,3 +6,4 @@ if [[ "$TERM" != "dumb" ]]; then
   source ~/.bashrc_real
 fi
 export TMOUT=$tmout
+
