@@ -2,7 +2,6 @@ set completion-ignore-case On
 #Tab: menu-complete
 
 # command substituations
-"SS": "systemctl suspend"
 "HH": "systemctl hibernate"
 "SV": "sudo vim "
 "SP": "sudo pacman -S "
