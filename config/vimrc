@@ -182,6 +182,8 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 vmap <Leader>s :sort<cr>
 nmap <C-S> :SyntasticToggleMode<CR>
+nmap <C-C> :set colorcolumn=0<CR>
+nmap <C-M> :set tw=0<CR>
 vnoremap < <gv
 vnoremap > >gv
 map <ESC>[5A <C-Up>
