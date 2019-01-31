@@ -5,6 +5,7 @@
 if [[ "$TERM" != "dumb" ]]; then
   source ~/.bashrc_real
 fi
+export TMOUT=$tmout
 
 # set tunnels for db access locally
 alias ams-db-tunnel='ssh -4 -v -L 9101:172.21.113.101:9101 adiab@ams-mpfront-01 -N -M

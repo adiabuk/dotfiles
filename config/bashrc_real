@@ -47,6 +47,7 @@ alias lesspipe='lesspipe.sh'
 alias cls='clear'
 alias watch='watch '
 alias vim100='vim -c "set colorcolumn=101"'
+alias xemacs='emacs '
 alias lists='emacs ~/repos/personal/org-mode/remember.org ~/repos/personal/org-mode/todo.org &'
 alias progress="watch -n1 '~/repos/personal/org-mode/progress.sh'"
 alias epoch="date +%s"
@@ -118,7 +119,8 @@ fi
 # }}}
 
 # {{{ Pyenv
-
+export ConEmuDefaultCp=65001
+export PYTHONIOENCODING=utf-8
 if [ -d "$HOME/.pyenv" ]; then
  export PYENV_ROOT="$HOME/.pyenv"
  PYENV_BIN="${PYENV_ROOT}/versions/$(/usr/bin/env pyenv version-name)/bin/"
