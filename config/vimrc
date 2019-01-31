@@ -72,6 +72,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-speeddating'
 syntax enable
 filetype plugin indent on
 " }}}
@@ -220,7 +221,7 @@ if match($TERM, "screen")!=-1
   set term=xterm
 endif
 
-colorscheme darkblue
+colorscheme delek
 set conceallevel=0
 syntax on
 

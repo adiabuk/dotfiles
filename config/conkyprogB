@@ -21,7 +21,7 @@ default_color lightgray
 default_shade_color red
 default_outline_color green
 alignment top_left
-gap_x 200
+gap_x 550
 gap_y 50
 
 no_buffers yes
