@@ -30,6 +30,7 @@ else
   # only alias if gvim exists
   [[ $(which gvim 2>/dev/null) ]] && alias vim='gvim -vn'
   alias emacs='emacs -nw'
+  alias xemacs='/usr/sbin/emacs'
 
 fi
 # }}}
@@ -47,8 +48,8 @@ alias lesspipe='lesspipe.sh'
 alias cls='clear'
 alias watch='watch '
 alias vim100='vim -c "set colorcolumn=101"'
-alias xemacs='emacs '
-alias lists='emacs ~/repos/personal/org-mode/remember.org ~/repos/personal/org-mode/todo.org &'
+alias lists='emacs ~/repos/personal/org-mode/remember.org ~/repos/personal/org-mode/todo.org'
+alias xlists='xemacs ~/repos/personal/org-mode/remember.org ~/repos/personal/org-mode/todo.org &'
 alias progress="watch -n1 '~/repos/personal/org-mode/progress.sh'"
 alias epoch="date +%s"
 alias retropie_setup='sudo /home/pi/RetroPie-Setup/retropie_setup.sh'

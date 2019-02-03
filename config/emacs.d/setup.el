@@ -8,6 +8,7 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (package-initialize)
+(package-refresh-contents)
 
 (mapcar (lambda (package)
           ; install package if not already installed
