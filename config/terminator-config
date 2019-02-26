@@ -1,17 +1,5 @@
 [global_config]
-  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
 [keybindings]
-  go_down = None
-  go_left = None
-  go_right = None
-  go_up = None
-  layout_launcher = None
-  next_tab = <Alt><Super>Right
-  prev_tab = <Alt><Super>Left
-  resize_down = None
-  resize_left = None
-  resize_right = None
-  resize_up = None
 [layouts]
   [[default]]
     [[[child1]]]
@@ -23,12 +11,3 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#fbf1c7"
-    background_darkness = 0.9
-    cursor_color = "#aaaaaa"
-    foreground_color = "#3c3836"
-<<<<<<< HEAD
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-=======
->>>>>>> dcb168427a9aacc784920de8548867e189c003df
-    scrollback_infinite = True
