@@ -80,21 +80,23 @@ ${font Open Sans:Bold:size=10}${color tan1}HDD ${color slate grey}${hr 2}${color
 ${font Open Sans:bold:size=8.5}ROOT $font$font$alignr ${fs_type /}
 ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /} %
 ${fs_bar /}
-${font Open Sans:bold:size=8.5}HOME $font$font$alignr ${fs_type /home}
-${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home} %
-${fs_bar /home}
-${font Open Sans:bold:size=8.5}TMP $font$font$alignr ${fs_type /tmp}
-${fs_used /tmp} / ${fs_size /tmp} $alignr ${fs_used_perc /tmp} %
-${fs_bar /tmp}
+${font Open Sans:bold:size=8.5}C-Drive $font$font$alignr ${fs_type /media/sf_C_DRIVE}
+${fs_used /media/sf_C_DRIVE} / ${fs_size /media/sf_C_DRIVE} $alignr ${fs_used_perc /media/sf_C_DRIVE} %
+${fs_bar /media/sf_C_DRIVE}
+
+${font Open Sans:bold:size=8.5}Z-Drive $font$font$alignr ${fs_type /media/sf_Z_DRIVE}
+${fs_used /media/sf_Z_DRIVE} / ${fs_size /media/sf_Z_DRIVE} $alignr ${fs_used_perc /media/sf_Z_DRIVE} %
+${fs_bar /media/sf_Z_DRIVE}
+
 
 # Network
 ${font Open Sans:Bold:size=10}${color tan1}NETWORK ${color slate grey}${hr 2}${color gray99}
-${font Open Sans:bold:size=8.5}wlp2s0
-${font} IPv4 ${alignr}${addr wlp2s0}
-${font} Down ${alignr}${downspeed wlp2s0}
-${font} Up ${alignr}${upspeed wlp2s0}
-${font}Total down ${alignr}${totaldown wlp2s0}
-${font}Total up ${alignr}${totalup wlp2s0}
+${font Open Sans:bold:size=8.5}enp0s3
+${font} IPv4 ${alignr}${addr enp0s3}
+${font} Down ${alignr}${downspeed enp0s3}
+${font} Up ${alignr}${upspeed enp0s3}
+${font}Total down ${alignr}${totaldown enp0s3}
+${font}Total up ${alignr}${totalup enp0s3}
 ${color slate grey}$stippled_hr${color gray99}
 ${if_up tun0}${font Open Sans:bold:size=8.5}tun0
 ${font} IPv4 ${alignr}${addr tun0}
