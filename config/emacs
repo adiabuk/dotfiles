@@ -6,6 +6,8 @@
 ;(evil-mode 1)
 ;(global-evil-tabs-mode t)
 
+(setq calendar-week-start-day 1)
+
 ;; packages
 (when (>= emacs-major-version 24)
   (require 'package)

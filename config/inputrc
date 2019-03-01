@@ -5,7 +5,7 @@ set completion-ignore-case On
 "HH": "systemctl hibernate"
 "SV": "sudo vim "
 "SP": "sudo pacman -S "
-"LL": "xscreensaver-command -lock"
+"LLL": "xscreensaver-command -lock"
 "II": "find_and_install $_"
 "JJ": "kill -9 $(jobs -p)"
 
