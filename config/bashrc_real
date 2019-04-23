@@ -22,7 +22,7 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
 fi
 # }}}
 
-#{{{ How to start vim
+# {{{ How to start vim
 alias vi='vim'
 if [[ $platform == 'mac' ]]; then
   alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw';
@@ -36,11 +36,10 @@ else
 fi
 # }}}
 
-#{{{ command completion
-[[ -f "$HOME"/bin/git-completion.bash ]] && \
-  source "$HOME"/bin/git-completion.bash # git completion
-source "$HOME"/.bash_completion.d/python-argcomplete.sh
-source "$HOME"/.bash_completion.d/ssh.sh
+# {{{ command completion
+for completion in "$HOME"/.bash_completion.d/*.sh; do
+  source "$completion";
+done
 complete -cf sudo
 # }}}
 
