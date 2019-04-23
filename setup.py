@@ -27,8 +27,13 @@ RAW = open(REAL_PATH + '/mapper.json', 'r').read()
 CTIME = calendar.timegm(time.gmtime())
 DATA = json.loads(RAW)
 
+print("\nInstalling tab completions")
+os.system('mkdir ~/.bash_completion.d')
+os.system('activate-global-python-argcomplete --dest ~/.bash_completion.d/')
+
+print("\nInstalling config files")
 for key in DATA.keys():
-    source = os.path.abspath('config/{0}'.format(key))
+     source = os.path.abspath('config/{0}'.format(key))
     DEST = '{0}/{1}'.format(HOME, DATA[key])
     print('dest: {0}'.format(DEST))
     parent_dir = os.path.dirname(DEST)
@@ -70,7 +75,4 @@ print("\njavascript:location.href='org-protocol://capture://l/'+encodeURICompone
 print("\nSetting up user crontab")
 CRON_SOURCE = os.path.abspath('config/crontab')
 os.system('crontab {0}'.format(CRON_SOURCE))
-print("\nInstalling argcomplete")
-os.system('mkdir ~/.bash_completion.d')
-os.system('activate-global-python-argcomplete --dest ~/.bash_completion.d/')
 print('\nDONE')

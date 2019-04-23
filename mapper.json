@@ -31,5 +31,6 @@
     "user": ".config/dconfig/user",
     "retroarch.cfg": ".config/retroarch/retroarch.cfg",
     "org-protocol.desktop":".local/share/applications/org-protocol.desktop",
-    "ipython_config.py": ".ipython/profile_default/ipython_config.py"
+    "ipython_config.py": ".ipython/profile_default/ipython_config.py",
+    "bash_completion.d": ".bash_completion.d"
 }
