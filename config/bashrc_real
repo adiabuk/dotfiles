@@ -22,7 +22,7 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
 fi
 # }}}
 
-# {{{ How to start vim
+# {{{ How to start vim/emacs
 alias vi='vim'
 if [[ $platform == 'mac' ]]; then
   alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw';
@@ -58,7 +58,7 @@ alias retropie_setup='sudo /home/pi/RetroPie-Setup/retropie_setup.sh'
 
 
 # use color and group dirs
-alias ls="ls --color=auto --group-directories-first --ignore=*.pyc"
+alias ls="ls --color=always --group-directories-first --ignore=*.pyc"
 alias ll="ls -l"
 alias grep="grep --color" # use color in grep
 alias ssh="ssh -Y" # X11 forwarding for vim yank to clipboard
@@ -78,9 +78,8 @@ alias df="df --total -x tmpfs -x dev"
 alias which="which_function"
 alias pip26="sudo python2.6 /usr/bin/pip2"
 alias per="cd ~/repos/personal"
-alias tr="cd ~/repos/tr"
+alias cb="cd ~/repos/cultbeauty"
 alias less="less -R"  # parse control characters
-alias f5vpn-login="ut f5vpn-login"
 alias tidy="tidy -config ~/tidy_config.txt"
 alias kvm="qemu-system-x86_64 --enable-kvm"
 # }}}
@@ -90,8 +89,10 @@ export HISTFILESIZE=-1 # Number of lines on disk ~/.bash_history
 export HISTSIZE=130000 # Number of lines in memory
 export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE="ls:cd:exit:clear"
+export HISTTIMEFORMAT="$(echo -e '\r\e[K')"
 export PROMPT_COMMAND="history -a; history -r; history -n"
 PROMPT_COMMAND="history -a;history -c; history -r;$PROMPT_COMMAND"
+export HOSTALIASES=~/.hosts
 shopt -s cmdhist
 shopt -s histappend
 shopt -s checkwinsize
@@ -231,11 +232,14 @@ function ut() {
 
 # {{{ retry ping if failed
 function ping() {
+  PING=/bin/ping
+  [[ "$platform" == "mac" ]] && PING=/sbin/ping
   # Retry ping if failed
   if [[ -z $1 ]]; then
-    /bin/ping;
+
+    $PING;
   else
-    ut /bin/ping "$@";
+    ut $PING "$@";
   fi
 }
 # }}}

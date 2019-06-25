@@ -38,7 +38,19 @@ function Smart_TabComplete()
 endfunction
 " }}}
 
-" {{{Syntastic
+" {{{
+  au BufNewFile,BufRead *.groovy  setf groovy
+  au BufNewFile,BufRead Jenkinsfile  setf groovy
+
+  if did_filetype()
+    finish
+  endif
+  if getline(1) =~ '^#!.*[/\\]groovy\>'
+    setf groovy
+  endif
+" }}}
+
+" {{{ Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -74,6 +86,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-speeddating'
+Plugin 'editorconfig/editorconfig-vim'
 syntax enable
 filetype plugin indent on
 " }}}

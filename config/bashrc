@@ -15,4 +15,9 @@ alias sin-db-tunnel='ssh -4 -v -L 9103:172.24.105.101:9101 adiab@sin-mpfront-01 
 alias tor-db-tunnel='ssh -4 -v -L 9102:169.55.165.10:9101 adiab@tor-mpfront-01 -N -M 20000'
 #alias torsl-db-tunnel='ssh -L 9104:169.55.165.10:9101 adiab@169.55.165.10'
 
+export PATH=/usr/local/opt/gnu-which/libexec/gnubin:/usr/local/opt/findutils/libexec/gnubin:$PATH
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export PATH=/usr/local/tflint/bin:$PATH
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 
+complete -C /usr/local/Cellar/terraform/0.11.14/bin/terraform terraform

@@ -10,3 +10,8 @@ _ssh()
     return 0
 }
 complete -F _ssh ssh
+
+complete -W "$(cat ~/.hosts|awk {'print $2'})" ssh
+complete -W "$(cat ~/.hosts|awk {'print $2'})" scp
+complete -W "$(cat ~/.hosts|awk {'print $2'})" ping
+complete -W "$(cat ~/.hosts|awk {'print $2'})" aws_lookup

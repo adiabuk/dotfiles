@@ -5,7 +5,13 @@ path = .git-aliases
 	name = Amro Diab
 
 [color]
-  ui = off
+  ui = always
+  diff = always
+  branch = always
+  decorage = always
+  interactive = always
+  pager = true
+  grep = always
 [push]
   default = current
 [diff]
