@@ -237,7 +237,7 @@ if match($TERM, "screen")!=-1
   set term=xterm
 endif
 
-colorscheme delek
+colorscheme blue
 set conceallevel=0
 syntax on
 
