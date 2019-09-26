@@ -23,7 +23,7 @@
 
 ## Run the file referenced by the PYTHONSTARTUP environment variable at IPython
 #  startup.
-#c.InteractiveShellApp.exec_PYTHONSTARTUP = True
+c.InteractiveShellApp.exec_PYTHONSTARTUP = True
 
 ## List of files to run at IPython startup.
 #c.InteractiveShellApp.exec_files = []
@@ -42,11 +42,11 @@
 
 ## Enable GUI event loop integration with any of ('glut', 'gtk', 'gtk2', 'gtk3',
 #  'osx', 'pyglet', 'qt', 'qt4', 'qt5', 'tk', 'wx', 'gtk2', 'qt4').
-#c.InteractiveShellApp.gui = None
+c.InteractiveShellApp.gui = None
 
 ## Should variables loaded at startup (by startup files, exec_lines, etc.) be
 #  hidden from tools like %who?
-#c.InteractiveShellApp.hide_initial_ns = True
+c.InteractiveShellApp.hide_initial_ns = True
 
 ## Configure matplotlib for interactive use with the default matplotlib backend.
 #c.InteractiveShellApp.matplotlib = None
@@ -123,7 +123,7 @@
 #------------------------------------------------------------------------------
 
 ## Whether to display a banner upon starting IPython.
-#c.TerminalIPythonApp.display_banner = True
+c.TerminalIPythonApp.display_banner = False
 
 ## If a command or file is given via the command-line, e.g. 'ipython foo.py',
 #  start an interactive shell after executing the file or command.
@@ -274,7 +274,7 @@
 ## Set to confirm when you try to exit IPython with an EOF (Control-D in Unix,
 #  Control-Z/Enter in Windows). By typing 'exit' or 'quit', you can force a
 #  direct exit without any confirmation.
-#c.TerminalInteractiveShell.confirm_exit = True
+c.TerminalInteractiveShell.confirm_exit = False
 
 ## Options for displaying tab completions, 'column', 'multicolumn', and
 #  'readlinelike'. These options are for `prompt_toolkit`, see `prompt_toolkit`
@@ -599,3 +599,14 @@
 #c.StoreMagics.autorestore = False
 c.InteractiveShellApp.extensions = ['autoreload']
 c.InteractiveShellApp.exec_lines = ['%autoreload 2']
+#from powerline.bindings.ipython.since_5 import PowerlinePrompts
+#c.TerminalInteractiveShell.simple_prompt = True
+#c.TerminalInteractiveShell.prompts_class = PowerlinePrompts
+#
+### Shortcut style to use at the prompt. 'vi' or 'emacs'.
+#c.TerminalInteractiveShell.editing_mode = 'vi'
+#
+### Set the editor used by IPython (default to $EDITOR/vi/notepad).
+#c.TerminalInteractiveShell.editor = 'vim'
+#
+#c.TerminalInteractiveShell.highlighting_style = 'stata-light'
