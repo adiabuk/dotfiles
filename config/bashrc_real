@@ -61,7 +61,6 @@ alias retropie_setup='sudo /home/pi/RetroPie-Setup/retropie_setup.sh'
 alias ls="ls --color=always --group-directories-first --ignore=*.pyc"
 alias ll="ls -l"
 alias grep="grep --color" # use color in grep
-alias ssh="ssh -Y" # X11 forwarding for vim yank to clipboard
 [[ $platform == "linux" ]] && alias open="xdg-open" # don"t do on mac
 alias json="python -mjson.tool" # pretty print json from stdin
 alias json2="jq"  # another json formatter
@@ -148,6 +147,12 @@ pandoc -t html $1 | lynx -stdin
 }
 
 
+# }}}
+
+# {{{ aws lookup before ssh
+function assh(){
+  ssh $(aws_lookup $1)
+}
 # }}}
 
 # {{{ make and cd into tmp directory
