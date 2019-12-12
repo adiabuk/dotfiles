@@ -223,7 +223,7 @@ set fdm=indent
 " use fdm=marker when no filetype
 filetype plugin on
 au BufNewFile,BufRead * if &ft == '' | set fdm=marker | endif
-
+au BufNewFile,BufRead Jenkinsfile setf groovy
 set nocompatible
 "filetype off
 set t_Co=256
@@ -237,7 +237,7 @@ if match($TERM, "screen")!=-1
   set term=xterm
 endif
 
-colorscheme delek
+colorscheme blue
 set conceallevel=0
 syntax on
 
