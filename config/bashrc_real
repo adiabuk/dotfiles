@@ -113,12 +113,10 @@ fi
 if [ -f /usr/bin/setxkbmap ]; then
   setxkbmap -option terminate:ctrl_alt_bksp # alt+ctl+backsp to kill X11
 fi
-[[ $platform == "mac" ]] &&  export PATH="$(/usr/local/bin/brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH"
-#dbus-update-activation-environment --all
+[[ $platform == "mac" ]] &&  export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH"
 # }}}
 
 # {{{for ruby
-#export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH:$HOME/.gem/ruby/2.3.0/bin
 export PATH=$HOME/.rbenv/versions/2.1.8/bin:$PATH
 if [ -f /usr/bin/rbenv ]; then
   eval "$(rbenv init -)" &> /dev/null
@@ -357,13 +355,11 @@ colors() {
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
-use_color=true
-
 unset use_color safe_term match_lhs sh
 
 alias np='nano -w PKGBUILD'
 
-xhost +local:root > /dev/null 2>&1
+[[ $platform == 'linux' ]] && xhost +local:root > /dev/null 2>&1
 
 
 # Bash won't get SIGWINCH if another process is in the foreground.
