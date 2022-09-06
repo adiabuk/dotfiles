@@ -1,15 +1,19 @@
+export PATH=/bin:/usr/bin/:/usr/local/bin:$PATH
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+PLATFORM=mac
 setopt appendhistory autocd extendedglob notify
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
+bindkey "^[[3~" delete-char
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -32,6 +36,7 @@ bindkey "^E" vi-end-of-line
 export PATH="$HOME/.rbenv/versions/2.1.8/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH"
 #
 # {{{ aliases
+alias backup_dbs='rsync -aP prod:/data .'
 alias mv='mv -i'
 alias dmesg='dmesg -T'
 alias lesspipe='lesspipe.sh'
@@ -49,7 +54,7 @@ alias retropie_setup='sudo /home/pi/RetroPie-Setup/retropie_setup.sh'
 alias ls='/usr/local/opt/coreutils/libexec/gnubin/ls --color=always --group-directories-first --ignore="*.pyc"'
 alias ll='ls -l'
 alias grep="grep --color" # use color in grep
-[[ $platform == "linux" ]] && alias open="xdg-open" # don"t do on mac
+[[ $PLATFORM == "linux" ]] && alias open="xdg-open" # don"t do on mac
 alias json="python -mjson.tool" # pretty print json from stdin
 alias json2="jq"  # another json formatter
 alias xml="xmllint --format" # pretty print xml from stdin
@@ -103,7 +108,7 @@ if [ -d "$HOME/.pyenv" ]; then
  export PYENV_ROOT="$HOME/.pyenv"
  PYENV_BIN="${PYENV_ROOT}/versions/$(/usr/bin/env pyenv version-name)/bin/"
  export PATH="$PYENV_BIN:$PYENV_ROOT/bin:$PATH"
- eval "$(pyenv init -)"
+ #eval "$(pyenv init -)"
 fi
 
 #}}}
@@ -209,7 +214,7 @@ function ut() {
 # {{{ retry ping if failed
 function ping() {
   PING=/bin/ping
-  [[ "$platform" == "mac" ]] && PING=/sbin/ping
+  [[ "$PLATFORM" == "mac" ]] && PING=/sbin/ping
   # Retry ping if failed
   if [[ -z $1 ]]; then
 
@@ -302,8 +307,4 @@ colors() {
   done
 }
 
-
-
 # }}}
-
-
