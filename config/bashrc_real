@@ -35,12 +35,11 @@ else
 
 fi
 # }}}
-
 # {{{ command completion
 for completion in "$HOME"/.bash_completion.d/*.sh; do
   source "$completion";
 done
-complete -cf sudo
+#complete -cf sudo
 # }}}
 
 # {{{ aliases
@@ -130,7 +129,7 @@ if [ -d "$HOME/.pyenv" ]; then
  export PYENV_ROOT="$HOME/.pyenv"
  PYENV_BIN="${PYENV_ROOT}/versions/$(/usr/bin/env pyenv version-name)/bin/"
  export PATH="$PYENV_BIN:$PYENV_ROOT/bin:$PATH"
- eval "$(pyenv init -)"
+ #eval "$(pyenv init -)"
 fi
 
 #}}}
@@ -310,7 +309,11 @@ function _update_ps1() {
 }
 if [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [[ $(type powerline-shell 2>/dev/null) ]]; then
   export TERM=xterm-256color
-  PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+  #PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+  powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+source /Users/amro/.pyenv/versions/3.8.0/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
 
 else
   # fallback PS1
