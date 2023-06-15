@@ -16,3 +16,4 @@ config/fluxbox/lastwallpaper
 config/emacs.d/elpa/*
 !config/emacs.d/archive
 config/vim/.netrwhist
+.DS_Store
