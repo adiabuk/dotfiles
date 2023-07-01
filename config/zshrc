@@ -118,6 +118,10 @@ fi
 
 # {{{ functions
 
+function get_release_content(){
+  git log --pretty=format:"%s"|awk '{print "* "$0} /new dev branch fork/ {exit}'
+}
+
 # {{{ render markdown as html
 
 function markdown(){
