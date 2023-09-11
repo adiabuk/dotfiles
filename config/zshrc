@@ -268,6 +268,16 @@ function volume() {
 }
 # }}}
 
+function git {
+  if [[ "$1" == "push" && "$2" == "" ]]; then
+    shift 1
+    command echo "Use git pa or git pt instead"
+    return
+  else
+    command git "$@"
+  fi
+}
+
 # {{{ coundown function
 function countdown() {
   # countdown number of seconds

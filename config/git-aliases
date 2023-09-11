@@ -9,6 +9,14 @@
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
+  pa = "!f() { \
+         git push $1 $2; echo "triggering jenkins pipeline scan..."; ssh -p 2223 amro@hp-vpn build scan-pipeline; \
+       }; f"
+  pt = "!f() { \
+         git push --tags; echo "triggering jenkins pipeline scan..."; ssh -p 2223 amro@hp-vpn build scan-pipeline; tag=`git describe --tags --abbrev=0`; ssh -p 2223 amro@hp-vpn build greencandle-pipeline/${tag}; echo "triggering tag build"; \
+       }; f"
+
+
 
 [color]
   diff = auto
