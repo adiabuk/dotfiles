@@ -14,7 +14,7 @@
        }; f"
   pn = "push"
   pt = "!f() { \
-         git push --tags; echo "triggering jenkins pipeline scan..."; ssh -p 2223 amro@hp-vpn build scan-pipeline; echo "waiting for tag to appear in jenkings....";sleep 60; tag=`git describe --tags --abbrev=0`; ssh -p 2223 amro@hp-vpn build greencandle-pipeline/${tag}; echo "triggering tag build..."; \
+         git push --tags; echo "triggering jenkins pipeline scan..."; ssh -p 2223 amro@hp-vpn build scan-pipeline; echo "waiting for tag to appear in jenkins....";sleep 60; tag=`git describe --tags --abbrev=0`; ssh -p 2223 amro@hp-vpn build greencandle-pipeline/${tag}; echo "triggering tag build..."; \
        }; f"
 
 
