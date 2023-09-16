@@ -12,8 +12,9 @@
   pa = "!f() { \
          git push $1 $2; echo "triggering jenkins pipeline scan..."; ssh -p 2223 amro@hp-vpn build scan-pipeline; \
        }; f"
+  pn = "push"
   pt = "!f() { \
-         git push --tags; echo "triggering jenkins pipeline scan..."; ssh -p 2223 amro@hp-vpn build scan-pipeline; tag=`git describe --tags --abbrev=0`; ssh -p 2223 amro@hp-vpn build greencandle-pipeline/${tag}; echo "triggering tag build"; \
+         git push --tags; echo "triggering jenkins pipeline scan..."; ssh -p 2223 amro@hp-vpn build scan-pipeline; sleep 10; tag=`git describe --tags --abbrev=0`; ssh -p 2223 amro@hp-vpn build greencandle-pipeline/${tag}; echo "triggering tag build..."; \
        }; f"
 
 
